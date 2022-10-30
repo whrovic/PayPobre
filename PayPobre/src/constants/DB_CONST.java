@@ -1,2 +1,5 @@
-package constants;public class DB_CONST {
+package constants;
+
+public class DB_CONST {
+
 }
