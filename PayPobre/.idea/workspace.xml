@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40ed21a0-961a-401a-97e9-7517da3f00a9" name="Changes" comment="">
+    <list default="true" id="7dcc27e6-5064-4d67-bc61-d8093b84480c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgresql_42_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/DB_CONST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/DB_CONST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/Postgre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/Postgre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/postgresql-42.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/Commercial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/Personal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/ShippingPartner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/account/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/DB_CONST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/Postgre.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,7 +33,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Gj3PbAZteJZj2nWBDuvs0Qz0Z5" />
+  <component name="ProjectId" id="2HOeqm8YGeNmttZNz8ZreoBUfZK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,55 +44,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/OneDrive/Faculdade/PSW/projects/t02_3/PayPobre/include/postgresql-42.5.0.jar",
+    "last_opened_file_path": "D:/OneDrive/Faculdade/PSW/projects/t02_3/javafx-sdk-19/lib",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.19466975"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cli.Main" />
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Postgre" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="db.Postgre" />
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Postgre" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40ed21a0-961a-401a-97e9-7517da3f00a9" name="Changes" comment="" />
-      <created>1666888144980</created>
+      <changelist id="7dcc27e6-5064-4d67-bc61-d8093b84480c" name="Changes" comment="" />
+      <created>1668160752030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666888144980</updated>
+      <updated>1668160752030</updated>
     </task>
     <servers />
   </component>
@@ -98,10 +71,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
   </component>
 </project>
