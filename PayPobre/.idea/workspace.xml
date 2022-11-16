@@ -5,27 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dcc27e6-5064-4d67-bc61-d8093b84480c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgresql_42_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/postgresql-42.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/clio/com/paypobre/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/clio/com/paypobre/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/clio/com/paypobre/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/paypobre/WelcomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/postgresql-42.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/Commercial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/Personal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/ShippingPartner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/account/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/DB_CONST.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/Postgre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/paypobre/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/paypobre/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/paypobre/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/paypobre/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -44,12 +48,40 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/OneDrive/Faculdade/PSW/projects/t02_3/javafx-sdk-19/lib",
+    "full.screen.before.presentation.mode": "true",
+    "last_opened_file_path": "D:/OneDrive/Faculdade/PSW/projects/t02_3/PayPobre/lib/postgresql-42.5.0.jar",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15625",
-    "project.structure.side.proportion": "0.19466975"
+    "project.structure.side.proportion": "0.19466975",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main\resources\com\paypobre" />
+      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.paypobre.HelloApplication" />
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.paypobre.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
