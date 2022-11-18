@@ -1,4 +1,4 @@
-package com.paypobre;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,16 +7,17 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
-public class HelloApplication extends Application {
+public class LoginUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginUI.class.getResource("/views/login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
 
-        Image icon = new Image("icon.png");
+        Image icon = new Image(Objects.requireNonNull(getClass().getResource("/images/icon.png")).toString());
         stage.getIcons().add(icon);
-        stage.setTitle("Login Page!");
+        stage.setTitle("PayPobre - Login");
         stage.setScene(scene);
         stage.show();
     }
