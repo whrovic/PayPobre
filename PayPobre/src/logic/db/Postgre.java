@@ -1,8 +1,12 @@
 package db;
 
+import account.User;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 
 public class Postgre {
     Connection c;
@@ -55,6 +59,7 @@ public class Postgre {
             Statement stmt = c.createStatement();
             stmt.executeUpdate(sql);
             c.close();
+            output_msg = "Registration Successful";
             return output_msg;
 
         }catch (Exception e) {
@@ -63,16 +68,34 @@ public class Postgre {
         }
     }
 
-    public String querySQL(String sql){
+    public boolean querySQL(String email, String password){
+        account.User user = new User();
         try {
             c = DriverManager.getConnection(db_url, name, pass);
             Statement stmt = c.createStatement();
-            stmt.executeQuery(sql);
-            return output_msg;
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '"+ email +"'";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                user.user_id = rs.getInt(1);
+                user.username = rs.getString(2);
+                user.email = rs.getString(4);
+                String pass = rs.getString(3);
+                //for(int i=0; i<password.length(); i++)
+                //{
+                    System.out.println("Pass : " + pass.length() + " password: " + password.length());
+               //}
+
+            }
+            if (Objects.equals(pass, password)) {
+                return true;
+            }
+            c.close();
+            return false;
 
         }catch (Exception e) {
             e.printStackTrace();
-            return e.getMessage();
+            return false;
         }
     }
 }
