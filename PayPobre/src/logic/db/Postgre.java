@@ -36,10 +36,12 @@ public class Postgre {
             String sql = "CREATE TABLE IF NOT EXISTS \"PayPobre\".users (" +
                     "user_id serial PRIMARY KEY," +
                     "username text UNIQUE NOT NULL," +
-                    "password tex NOT NULL," +
+                    "password text NOT NULL," +
                     "email text UNIQUE NOT NULL," +
                     "created_on TIMESTAMP NOT NULL," +
-                    "last_login TIMESTAMP);";
+                    "last_login TIMESTAMP," +
+                    "card integer UNIQUE NOT NULL)," +
+                    "type text NOT NULL;";
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
@@ -79,12 +81,11 @@ public class Postgre {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
                 user.email = rs.getString(4);
-                userPass = new String(rs.getString(3));
+                userPass = rs.getString(3);
             }
 
             assert userPass != null;
-            if (userPass.compareTo(password) == 0)
-                return true;
+            if (userPass.compareTo(password) == 0) return true;
 
             c.close();
             return false;

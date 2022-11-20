@@ -49,7 +49,7 @@ public class Signup {
         String cardStr = cardField.getText();
         int card = 0;
 
-        if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || cardStr.isEmpty() || type.isEmpty()) {
+        if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || cardStr.isEmpty() || type == null) {
             logMessage.setText("You must fulfill everything");
             return;
         }
@@ -59,7 +59,7 @@ public class Signup {
             return;
         }
 
-        if(!Macros.creditCardValidator(cardStr, card)){
+        if( (card = Macros.creditCardValidator(cardStr)) == 0 ){
             logMessage.setText("Please, insert a valid card number.");
             return;
         }

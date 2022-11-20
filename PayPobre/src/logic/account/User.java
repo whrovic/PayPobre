@@ -15,8 +15,8 @@ public class User {
     Postgre db = new Postgre();
     public String Signup(String username, String email, String password, int card, String type){
         Date date = new Timestamp(System.currentTimeMillis());
-        String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card)"+
-                "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"')";
+        String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card, type)"+
+                "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"', '"+ type +"')";
         String output_msg = db.executeSQL(sql);
         return output_msg;
     }
@@ -28,7 +28,8 @@ public class User {
             output_msg = "Log in Successful";
         }
         else output_msg = "Password or email incorrect";
-        String sql = "UPDATE \"PayPobre\".users SET last_login = ";
+        String sql = "UPDATE \"PayPobre\".users SET last_login = '"+ date +"' WHERE email = '" + email + "'";
+        db.executeSQL(sql);
         return output_msg;
     }
 }

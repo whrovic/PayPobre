@@ -33,6 +33,14 @@ public class Login {
     @FXML
     protected void tryLogin() {
         //logMessage.setText("Our services are down :(");
+        String email = emailField.getText();
+        String pass = passField.getText();
+
+        if(email.isEmpty() || pass.isEmpty()){
+            logMessage.setText("You must fulfill everything");
+            return;
+        }
+
         User u = new User();
         logMessage.setText(u.Login(emailField.getText(), passField.getText()));
     }

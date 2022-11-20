@@ -5,14 +5,14 @@ import java.util.regex.Pattern;
 import static java.lang.Integer.parseInt;
 
 public class Macros {
-    public static boolean creditCardValidator(String cardStr, int card) {
+    public static int creditCardValidator(String cardStr) {
+        int card = 0;
         try {
             card = parseInt(cardStr);
         } catch (NumberFormatException ex) {
-            card = 0;
-            return false;
+            return 0;
         }
-        return true;
+        return card;
     }
 
     public static boolean emailValidator(String email) {
