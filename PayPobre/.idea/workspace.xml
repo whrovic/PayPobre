@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c74d74-05e2-498a-9c4a-bb6ac24e2b1f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/client/controller/Signup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/main/app.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/account/Commercial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/account/Personal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/util/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/util/Macros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/icon/brand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/icon/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/signup/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/images/signup/hand_money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/views/signup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/SignIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/main/CmdLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main/CmdLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/main/LoginUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/db/Postgre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/Postgre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/images/waller.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/images/signin/leftimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/signin.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +82,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoginUI">
+  <component name="RunManager" selected="Application.app">
     <configuration name="CmdLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.CmdLine" />
       <module name="PayPobre" />
@@ -79,7 +101,7 @@
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.LoginUI" />
+    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.app" />
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,7 +124,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginUI" />
+        <item itemvalue="Application.app" />
         <item itemvalue="Application.CmdLine" />
       </list>
     </recent_temporary>

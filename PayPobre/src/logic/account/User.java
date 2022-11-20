@@ -13,7 +13,7 @@ public class User {
     public int user_id;
     private int card;
     Postgre db = new Postgre();
-    public String SignIn(String username, String email, String password, int card){
+    public String Signup(String username, String email, String password, int card){
         Date date = new Timestamp(System.currentTimeMillis());
         String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card)"+
                 "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"')";
@@ -21,7 +21,7 @@ public class User {
         return output_msg;
     }
 
-    public String LogIn(String email, String password){
+    public String Login(String email, String password){
         Date date = new Timestamp(System.currentTimeMillis());
         String output_msg;
         if(db.querySQL(email, password)){

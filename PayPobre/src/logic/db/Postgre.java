@@ -1,6 +1,7 @@
 package db;
 
 import account.User;
+import util.Macros;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,9 +37,9 @@ public class Postgre {
             Statement stmt = c.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS \"PayPobre\".users (" +
                     "user_id serial PRIMARY KEY," +
-                    "username VARCHAR ( 50 ) UNIQUE NOT NULL," +
-                    "password VARCHAR ( 50 ) NOT NULL," +
-                    "email VARCHAR ( 255 ) UNIQUE NOT NULL," +
+                    "username text UNIQUE NOT NULL," +
+                    "password tex NOT NULL," +
+                    "email text UNIQUE NOT NULL," +
                     "created_on TIMESTAMP NOT NULL," +
                     "last_login TIMESTAMP);";
             stmt.executeUpdate(sql);
@@ -73,23 +74,20 @@ public class Postgre {
         try {
             c = DriverManager.getConnection(db_url, name, pass);
             Statement stmt = c.createStatement();
-            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '"+ email +"'";
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
             ResultSet rs = stmt.executeQuery(query);
-            while(rs.next())
-            {
+            String dbPass = null;
+            while (rs.next()) {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
                 user.email = rs.getString(4);
-                String pass = rs.getString(3);
-                //for(int i=0; i<password.length(); i++)
-                //{
-                    System.out.println("Pass : " + pass.length() + " password: " + password.length());
-               //}
+                dbPass = new String(rs.getString(3));
+            }
 
-            }
-            if (Objects.equals(pass, password)) {
+            assert dbPass != null;
+            if (dbPass.compareTo(password) == 0)
                 return true;
-            }
+
             c.close();
             return false;
 
