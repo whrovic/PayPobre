@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0c74d74-05e2-498a-9c4a-bb6ac24e2b1f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/controller/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/main/CmdLine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/db/Postgre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/Postgre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/util/Macros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/util/Macros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/images/signup/hand_money.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/images/signup/hand_money.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
