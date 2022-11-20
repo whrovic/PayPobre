@@ -1,5 +1,6 @@
 package controller;
 
+import account.Commercial;
 import account.Personal;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,8 +12,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.postgresql.jdbc.SslMode;
 import util.Const;
+import util.Macros;
 
+import javax.crypto.Mac;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -38,12 +42,37 @@ public class Signup {
         accType.setItems(FXCollections.observableArrayList("Personal", "Commercial"));
     }
     public void trySignup(ActionEvent actionEvent) {
+        String name = nameField.getText();
+        String email = emailField.getText();
+        String pass = passField.getText();
+        String type = accType.getValue();
+        String cardStr = cardField.getText();
+        int card = 0;
 
-        if(accType.getValue().compareTo("Personal") == 0){
-            Personal p = new Personal();
-            logMessage.setText(p.Signup(nameField.getText(), emailField.getText(), passField.getText(), 0));
+        if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || cardStr.isEmpty() || type.isEmpty()) {
+            logMessage.setText("You must fulfill everything");
+            return;
         }
-        else logMessage.setText("To be implemented");
+
+        if(!Macros.emailValidator(email)){
+            logMessage.setText("Please, insert a valid email:\n \texample@test.com");
+            return;
+        }
+
+        if(!Macros.creditCardValidator(cardStr, card)){
+            logMessage.setText("Please, insert a valid card number.");
+            return;
+        }
+
+        if(type.compareTo(Const.PERSONAL) == 0){
+            Personal p = new Personal();
+            logMessage.setText(p.Signup(name, email, pass, card, type));
+        }
+
+        if(type.compareTo(Const.COMMERCIAL) == 0){
+            Commercial c = new Commercial();
+            logMessage.setText(c.Signup(name, email, pass, card, type));
+        }
     }
 
     public void backToLogin(ActionEvent actionEvent) throws IOException {

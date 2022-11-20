@@ -1,24 +1,22 @@
 package db;
 
 import account.User;
-import util.Macros;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Objects;
 
 public class Postgre {
     Connection c;
-    String name = "pswt0203";
-    String pass = "plataoplomo";
-    String db_url = "jdbc:postgresql://db.fe.up.pt:5432/";
+    String db_UserName = "pswt0203";
+    String db_PassWord = "plataoplomo";
+    String db_URL = "jdbc:postgresql://db.fe.up.pt:5432/";
     String output_msg = null;
     public String connect() {
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(db_url, name, pass);
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -31,7 +29,7 @@ public class Postgre {
     public String CreateTable(){
         try {
             //Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(db_url, name, pass);
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             output_msg = "Opened database successfully";
 
             Statement stmt = c.createStatement();
@@ -56,7 +54,7 @@ public class Postgre {
 
     public String executeSQL(String sql){
         try {
-            c = DriverManager.getConnection(db_url, name, pass);
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             stmt.executeUpdate(sql);
             c.close();
@@ -72,20 +70,20 @@ public class Postgre {
     public boolean querySQL(String email, String password){
         account.User user = new User();
         try {
-            c = DriverManager.getConnection(db_url, name, pass);
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
             ResultSet rs = stmt.executeQuery(query);
-            String dbPass = null;
+            String userPass = null;
             while (rs.next()) {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
                 user.email = rs.getString(4);
-                dbPass = new String(rs.getString(3));
+                userPass = new String(rs.getString(3));
             }
 
-            assert dbPass != null;
-            if (dbPass.compareTo(password) == 0)
+            assert userPass != null;
+            if (userPass.compareTo(password) == 0)
                 return true;
 
             c.close();

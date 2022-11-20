@@ -98,10 +98,13 @@
                                         <Font name="Arial Bold" size="20.0" />
                                     </font>
                                 </Label>
-                                <ImageView fitHeight="316.0" fitWidth="291.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+                                <ImageView fitHeight="316.0" fitWidth="280.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../images/signup/hand_money.png" />
                                     </image>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX" />
+                           </effect>
                                 </ImageView>
                             </children>
                         </AnchorPane>

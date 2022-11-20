@@ -13,7 +13,7 @@ public class User {
     public int user_id;
     private int card;
     Postgre db = new Postgre();
-    public String Signup(String username, String email, String password, int card){
+    public String Signup(String username, String email, String password, int card, String type){
         Date date = new Timestamp(System.currentTimeMillis());
         String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card)"+
                 "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"')";

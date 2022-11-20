@@ -78,18 +78,18 @@
                               </PasswordField>
                            </children>
                         </GridPane>
-                        <Button layoutX="50.0" layoutY="350.0" mnemonicParsing="false" onAction="#trySignup" prefHeight="30.0" prefWidth="285.0" style="-fx-background-radius: 90;" text="Create Account">
+                        <Button layoutX="50.0" layoutY="372.0" mnemonicParsing="false" onAction="#trySignup" prefHeight="30.0" prefWidth="285.0" style="-fx-background-radius: 90;" text="Create Account">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Button>
-                        <Label layoutX="92.0" layoutY="388.0" prefHeight="28.0" prefWidth="139.0" text="Already have an account?">
+                        <Label layoutX="92.0" layoutY="410.0" prefHeight="28.0" prefWidth="139.0" text="Already have an account?">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="logMessage" alignment="CENTER" layoutX="50.0" layoutY="316.0" prefHeight="28.0" prefWidth="285.0" textFill="#d8000c" />
-                        <Hyperlink alignment="CENTER_RIGHT" layoutX="222.0" layoutY="388.0" onAction="#backToLogin" prefHeight="28.0" prefWidth="76.0" text="Login here!">
+                        <Label fx:id="logMessage" alignment="CENTER" layoutX="50.0" layoutY="316.0" prefHeight="50.0" prefWidth="286.0" textFill="#d8000c" />
+                        <Hyperlink alignment="CENTER_RIGHT" layoutX="222.0" layoutY="410.0" onAction="#backToLogin" prefHeight="28.0" prefWidth="76.0" text="Login here!">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font>
@@ -108,10 +108,13 @@
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="316.0" fitWidth="291.0" layoutX="5.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.476776123046875" AnchorPane.leftAnchor="5.0">
+                        <ImageView fitHeight="316.0" fitWidth="280.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/signup/hand_money.png" />
                            </image>
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX" />
+                           </effect>
                         </ImageView>
                      </children>
                   </AnchorPane>
