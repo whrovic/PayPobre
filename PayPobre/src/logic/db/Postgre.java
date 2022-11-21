@@ -2,10 +2,7 @@ package db;
 
 import account.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Postgre {
     Connection c;
@@ -54,18 +51,28 @@ public class Postgre {
         return output_msg;
     }
 
-    public String executeSQL(String sql){
+    public String executeSQL(String username, String email, String password, int card, String type, Date date){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
+            String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card, type)"+
+                    "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"', '"+ type +"')";
             stmt.executeUpdate(sql);
             c.close();
             output_msg = "Registration Successful";
             return output_msg;
 
         }catch (Exception e) {
-            e.printStackTrace();
-            return e.getMessage();
+            try {
+                Statement stmt = c.createStatement();
+                String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
+                ResultSet rs = stmt.executeQuery(query);
+                //System.out.println(rs);
+                //e.printStackTrace();
+                return "Email already exists";
+            } catch (SQLException ex) {
+                return e.getMessage();
+            }
         }
     }
 
@@ -81,7 +88,7 @@ public class Postgre {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
                 user.email = rs.getString(4);
-                userPass = rs.getString(3);
+                userPass = new String(rs.getString(3));
             }
 
             assert userPass != null;
@@ -91,8 +98,20 @@ public class Postgre {
             return false;
 
         }catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;
+        }
+    }
+
+    public void updateSQL(String sql){
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            stmt.executeUpdate(sql);
+            c.close();
+
+        }catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

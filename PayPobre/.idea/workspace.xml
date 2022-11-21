@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0c74d74-05e2-498a-9c4a-bb6ac24e2b1f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/controller/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Signup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/db/Postgre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/Postgre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/util/Macros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/util/Macros.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

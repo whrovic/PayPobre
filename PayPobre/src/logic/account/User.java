@@ -3,7 +3,7 @@ package account;
 import db.Postgre;
 
 import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
     public String username;
@@ -14,22 +14,21 @@ public class User {
     private int card;
     Postgre db = new Postgre();
     public String Signup(String username, String email, String password, int card, String type){
-        Date date = new Timestamp(System.currentTimeMillis());
-        String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card, type)"+
-                "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"', '"+ type +"')";
-        String output_msg = db.executeSQL(sql);
+        Date date = new Date(System.currentTimeMillis());
+
+        String output_msg = db.executeSQL(username, email, password, card, type, date);
         return output_msg;
     }
 
     public String Login(String email, String password){
-        Date date = new Timestamp(System.currentTimeMillis());
+        Date date = new Date(System.currentTimeMillis());
         String output_msg;
         if(db.querySQL(email, password)){
             output_msg = "Log in Successful";
         }
         else output_msg = "Password or email incorrect";
         String sql = "UPDATE \"PayPobre\".users SET last_login = '"+ date +"' WHERE email = '" + email + "'";
-        db.executeSQL(sql);
+        db.updateSQL(sql);
         return output_msg;
     }
 }
