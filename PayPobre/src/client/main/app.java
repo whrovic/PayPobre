@@ -1,6 +1,6 @@
 package main;
 
-import db.Postgre;
+import db.user_db;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +20,6 @@ public class app extends Application {
             //Start Login
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
             Scene scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
-
             Image icon = new Image(Objects.requireNonNull(getClass().getResource("/images/icon/icon.png")).toString());
             stage.getIcons().add(icon);
             stage.setTitle("PayPobre - Welcome");
@@ -28,7 +27,7 @@ public class app extends Application {
             stage.show();
 
             //database
-            Postgre db = new Postgre();
+            user_db db = new user_db();
             db.connect();
         }
         catch (Exception e){

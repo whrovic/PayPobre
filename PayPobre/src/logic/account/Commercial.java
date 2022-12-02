@@ -1,5 +1,5 @@
 package account;
 
-public class Commercial extends User{
+public class Commercial extends Personal{
 
 }
