@@ -1,6 +1,6 @@
 package main;
 
-import db.user_db;
+import db.User_db;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +27,7 @@ public class app extends Application {
             stage.show();
 
             //database
-            user_db db = new user_db();
+            User_db db = new User_db();
             db.connect();
         }
         catch (Exception e){

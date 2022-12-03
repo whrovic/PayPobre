@@ -65,13 +65,14 @@ public class Signup {
         }
 
         if(type.compareTo(Const.PERSONAL) == 0){
-            Personal p = new Personal();
+            Personal p = new Personal(null);
             logMessage.setText(p.Signup(name, email, pass, card, type));
         }
 
         if(type.compareTo(Const.COMMERCIAL) == 0){
-            Commercial c = new Commercial();
+            Commercial c = new Commercial(null);
             logMessage.setText(c.Signup(name, email, pass, card, type));
+
         }
     }
 

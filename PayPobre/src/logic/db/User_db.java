@@ -1,12 +1,12 @@
 package db;
 
-import account.User;
+import account.*;
 
 import java.sql.*;
 
 import static util.Const.*;
 
-public class user_db {
+public class User_db {
     Connection c;
     String db_UserName = "pswt0203";
     String db_PassWord = "plataoplomo";
@@ -53,13 +53,14 @@ public class user_db {
         return output_msg;
     }
 
-    public String insertUser(String username, String email, String password, int card, String type, Date date, long money){
+    public String insertUser(String username, String email, String password, int card, String type, Date date, Double money){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card, type)"+
+            String sql = "INSERT into \"PayPobre\".users (user_id, username, password, email, created_on, card, type, money)"+
                     "VALUES (default, '"+ username +"' , '"+ password +"', '"+ email +"', '"+ date +"', '"+ card +"', '"+ type + "', '"+ money +"')";
             stmt.executeUpdate(sql);
+            stmt.close();
             c.close();
             output_msg = "Registration Successful";
             return output_msg;
@@ -68,7 +69,8 @@ public class user_db {
             try {
                 Statement stmt = c.createStatement();
                 String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
-                ResultSet rs = stmt.executeQuery(query);
+                // ResultSet rs =
+                stmt.executeQuery(query);
                 //System.out.println(rs);
                 //e.printStackTrace();
                 return "Email already exists";
@@ -79,25 +81,34 @@ public class user_db {
     }
 
     public User queryLogIn(String email, String password){
-        account.User user = new User();
+        User user = new User();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
             ResultSet rs = stmt.executeQuery(query);
             String userPass = null;
+
             while (rs.next()) {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
+                userPass = rs.getString(3);
                 user.email = rs.getString(4);
-                userPass = new String(rs.getString(3));
-                user.card = rs.getInt(7);
+                user.created_on = rs.getDate(5);
+                user.last_login = rs.getDate(6);
+                user.wallet.card = rs.getLong(7);
                 user.type = rs.getString(8);
+                user.wallet.money = rs.getDouble(9);
             }
 
             assert userPass != null;
-            if (userPass.compareTo(password) == 0) return user;
+            if (userPass.compareTo(password) == 0){
+                user.logMessage = LOGIN_SUCCESSFUL;
+                return user;
+            }
+
             user.logMessage = INCORRECT_PASSWORD;
+            stmt.close();
             c.close();
             return user;
 
@@ -107,26 +118,24 @@ public class user_db {
         }
     }
 
-    public User querySQL(String email, String password){
-        account.User user = new User();
+    public User querySQL(int ID){
+        User user = new User();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE user_id = '" + ID + "'";
             ResultSet rs = stmt.executeQuery(query);
-            String userPass = null;
             while (rs.next()) {
                 user.user_id = rs.getInt(1);
                 user.username = rs.getString(2);
                 user.email = rs.getString(4);
-                userPass = new String(rs.getString(3));
-                user.card = rs.getInt(7);
+                user.created_on = rs.getDate(5);
+                user.last_login = rs.getDate(6);
+                user.wallet.card = rs.getLong(7);
                 user.type = rs.getString(8);
+                user.wallet.money = rs.getDouble(9);
             }
-
-            assert userPass != null;
-            if (userPass.compareTo(password) == 0) return user;
-            user.logMessage = INCORRECT_PASSWORD;
+            stmt.close();
             c.close();
             return user;
 
@@ -136,15 +145,18 @@ public class user_db {
         }
     }
 
-    public void updateSQL(String sql){
+    public boolean updateSQL(String sql){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             stmt.executeUpdate(sql);
+            stmt.close();
             c.close();
+            return true;
 
         }catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 }

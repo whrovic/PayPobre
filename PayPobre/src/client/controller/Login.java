@@ -15,8 +15,7 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.util.Objects;
 
-import static util.Const.HEIGHT;
-import static util.Const.WIDTH;
+import static util.Const.*;
 
 public class Login {
     @FXML
@@ -31,7 +30,7 @@ public class Login {
     private Label logMessage;
 
     @FXML
-    protected void tryLogin() {
+    protected void tryLogin(ActionEvent actionEvent) throws IOException {
         //logMessage.setText("Our services are down :(");
         String email = emailField.getText();
         String pass = passField.getText();
@@ -41,9 +40,22 @@ public class Login {
             return;
         }
 
-        User u = new User();
-        logMessage.setText(u.Login(emailField.getText(), passField.getText()));
+        User user = new User();
+        user = user.Login(emailField.getText(), passField.getText());
+        if(user == null){
+            logMessage.setText("This user does not exit");
+            return;
+        }
+
+        assert user.logMessage != null;
+        if(user.logMessage.equals(LOGIN_SUCCESSFUL)){
+            logMessage.setText(user.logMessage);
+            Home home = new Home(user);
+            home.start(stage);
+        }
+        else logMessage.setText(user.logMessage);
     }
+
     public void SignupPage(ActionEvent actionEvent) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/signup.fxml")));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -54,5 +66,13 @@ public class Login {
 
     public void goForgotPass(ActionEvent actionEvent) {
         logMessage.setText("Sorry, this feature is not implemented yet");
+    }
+
+    public void goHomePage(ActionEvent actionEvent, User user) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/home.fxml")));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root, WIDTH, HEIGHT);
+        stage.setScene(scene);
+        stage.show();
     }
 }

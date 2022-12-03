@@ -1,8 +1,8 @@
 package db;
-
+import account.Commercial;
+import account.User;
 import java.sql.*;
-
-public class transfers_db {
+public class Transfers_db {
     Connection c;
     String db_UserName = "pswt0203";
     String db_PassWord = "plataoplomo";
@@ -33,7 +33,8 @@ public class transfers_db {
                     "buyer_id text UNIQUE NOT NULL," +
                     "amount money NOT NULL," +
                     "trans_id text UNIQUE NOT NULL" +
-                    "done boolean NOT NULL;";
+                    "done boolean NOT NULL" +
+                    "date date NOT NULL;";
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
@@ -46,32 +47,32 @@ public class transfers_db {
         return output_msg;
     }
 
-    public String executeTransactionSQL(int seller_id, int buyer_id, long amount, int trans_id, boolean done, Date date){
+    public String executeTransactionSQL(int seller_id, int buyer_id, Double amount, int trans_id, boolean done, Date date){
+        User_db user_db = new User_db();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             String sql = "INSERT into \"PayPobre\".Transfers (seller_id, buyer_id, amount, trans_id, done, date)"+
-                    "VALUES (default, '"+ seller_id +"' , '"+ buyer_id +"', '"+ amount +"', '"+ date +"', '"+ trans_id +"', '"+ done + "', '"+ date +"')";
+                    "VALUES (default, '"+ buyer_id +"', '"+ amount +"', '"+ trans_id +"', '"+ done + "', '"+ date +"')";
             stmt.executeUpdate(sql);
+
+            Commercial seller = new Commercial(user_db.querySQL(seller_id));
+            Double moneySeller = seller.wallet.money - amount;
+            String sql_update_money_seller = "UPDATE \"PayPobre\".users SET money = '" + moneySeller + "' WHERE user = '" + seller_id + "'";
+            user_db.updateSQL(sql_update_money_seller);
+
+            User buyer = user_db.querySQL(buyer_id);
+            int moneyBuyer = (int) (buyer.wallet.money - amount);
+            String sql_update_money_buyer = "UPDATE \"PayPobre\".users SET money = '" + moneyBuyer + "' WHERE user = '" + buyer_id + "'";
+            user_db.updateSQL(sql_update_money_buyer);
+            stmt.close();
             c.close();
-            output_msg = "Registration Successful";
+
+            output_msg = "Transaction Done";
             return output_msg;
 
         }catch (Exception e) {
-            try {
-                Statement stmt = c.createStatement();
-                String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
-                ResultSet rs = stmt.executeQuery(query);
-                //System.out.println(rs);
-                //e.printStackTrace();
-                return "Email already exists";
-            } catch (SQLException ex) {
-                return e.getMessage();
-            }
+            return e.getMessage();
         }
     }
-
-
-
-
 }

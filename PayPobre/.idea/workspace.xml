@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c74d74-05e2-498a-9c4a-bb6ac24e2b1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/logic/db/transfers_db.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/wallet/wallet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/controller/Home.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/views/home.fxml.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Signup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main/app.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/account/Commercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/Commercial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/account/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/Personal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/db/Postgre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/user_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/db/transfers_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/Transfers_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/db/user_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/User_db.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/util/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/wallet/wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/wallet/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/images/signup/hand_money.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/images/signup/hand_money.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -39,21 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15625&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37543452&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.37543452",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\" />

@@ -8,6 +8,8 @@ public final class Const {
     public static final String PERSONAL = "Personal";
 
     public static final String INCORRECT_PASSWORD = "Password incorrect";
+    public static final String LOGIN_SUCCESSFUL = "Log in Successful";
+    public static final String ERROR = "ERROR - Something Went Wrong";
 
     // Window Dimensions
     public static final int WIDTH = 900;
