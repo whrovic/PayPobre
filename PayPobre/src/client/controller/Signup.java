@@ -12,11 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import org.postgresql.jdbc.SslMode;
 import util.Const;
 import util.Macros;
 
-import javax.crypto.Mac;
 import java.io.IOException;
 import java.util.Objects;
 

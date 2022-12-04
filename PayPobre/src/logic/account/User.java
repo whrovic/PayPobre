@@ -26,6 +26,7 @@ public class User {
         if(user == null) return;
         if(user.type.compareTo(PERSONAL)!=0) return;
 
+        this.user_id = user.user_id;
         this.type = user.type;
         this.email = user.email;
         this.username = user.username;

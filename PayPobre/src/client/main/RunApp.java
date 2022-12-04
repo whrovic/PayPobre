@@ -12,7 +12,7 @@ import util.Const;
 import java.io.IOException;
 import java.util.Objects;
 
-public class app extends Application {
+public class RunApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //Start Login
@@ -20,7 +20,7 @@ public class app extends Application {
         Scene scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
         Image icon = new Image(Objects.requireNonNull(getClass().getResource("/images/icon/icon.png")).toString());
         stage.getIcons().add(icon);
-        stage.setTitle("PayPobre - Welcome");
+        stage.setTitle("PayPobre");
         stage.setScene(scene);
         stage.show();
 

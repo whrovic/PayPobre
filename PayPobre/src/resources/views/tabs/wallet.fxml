@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WalletTab">
+<AnchorPane fx:id="walletTab" prefHeight="582.0" prefWidth="978.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerTabs.WalletController">
    <children>
       <AnchorPane layoutX="78.0" layoutY="50.0" prefHeight="190.0" prefWidth="310.0" style="-fx-background-color: white; -fx-background-radius: 7;" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="50.0">
          <effect>

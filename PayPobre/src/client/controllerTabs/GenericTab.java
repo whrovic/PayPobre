@@ -1,7 +1,6 @@
-package controller;
+package controllerTabs;
 
 import account.*;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -10,7 +9,7 @@ import static util.Const.*;
 
 public abstract class GenericTab {
     public User u;
-    public int accountType;
+    public int accountType; //0 -> Personal 1 -> Commercial
     public Stage stage;
     public Scene scene;
     public Parent root;

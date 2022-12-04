@@ -5,27 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0c74d74-05e2-498a-9c4a-bb6ac24e2b1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/client/controller/GenericTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/controller/HomeTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/controller/ProfileTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/controller/TabView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/controller/TransfersTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/controller/WalletTab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/transactions/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/wallet/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/views/profile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/views/transfers.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/views/wallet.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/controllerTabs/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/controllerTabs/TabView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/controllerTabs/TransfersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/controllerTabs/WalletController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/views/tabs/home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/controller/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/GenericTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controllerTabs/GenericTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/HomeTab.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main/app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/account/Commercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/Commercial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/account/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/Personal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/db/Transfers_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/db/Transfers_db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/util/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/home.fxml.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/ProfileTab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/controller/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/TabView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/TransfersTab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/controller/WalletTab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/main/app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main/RunApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/account/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/account/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/tabs/profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/tabview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/tabs/tabview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/transfers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/tabs/transfers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/wallet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/tabs/wallet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +42,16 @@
       <list>
         <option value="FxmlFile" />
         <option value="AnnotationType" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/UserTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +71,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/OneDrive/Faculdade/PSW/projects/t02_3/PayPobre/src/logic/account&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15625&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37543452&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
@@ -73,23 +86,29 @@
       <recent name="controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\resources\views\tabs" />
       <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\" />
       <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main" />
       <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src" />
       <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main\resources\views" />
-      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="account" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.app" />
+  <component name="RunManager" selected="JUnit.UserTest.login">
+    <configuration name="RunApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.RunApp" />
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.TabView" />
+          <option name="PATTERN" value="controllerTabs.TabView" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,9 +116,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTest" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.signup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTest" />
+      <option name="METHOD_NAME" value="signup" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.app" />
+        <item itemvalue="JUnit.UserTest.login" />
+        <item itemvalue="JUnit.UserTest.signup" />
+        <item itemvalue="Application.RunApp" />
+        <item itemvalue="JUnit.UserTest" />
       </list>
     </recent_temporary>
   </component>

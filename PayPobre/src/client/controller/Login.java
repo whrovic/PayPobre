@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
+import controllerTabs.TabView;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -50,14 +51,12 @@ public class Login {
         if(user.logMessage.equals(LOGIN_SUCCESSFUL)){
             logMessage.setText(user.logMessage);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tabview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tabs/tabview.fxml"));
             root = loader.load();
             TabView tabView = loader.getController();
             tabView.setUser(user);
-            tabView.init(user);
 
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("PayPobre");
             Scene scene = new Scene(root, WIDTH, HEIGHT);
             stage.setScene(scene);
             stage.show();
