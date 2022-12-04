@@ -5,7 +5,7 @@ module com.paypobre {
     requires org.postgresql.jdbc;
 
 
-    opens com.paypobre to javafx.fxml;
+    opens application to javafx.fxml;
     opens controller to javafx.fxml;
     opens controllerTabs to javafx.fxml;
 
@@ -16,5 +16,5 @@ module com.paypobre {
     exports util;
     exports controllerTabs;
 
-    exports com.paypobre;
+    exports application;
 }

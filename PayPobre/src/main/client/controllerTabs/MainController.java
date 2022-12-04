@@ -34,6 +34,8 @@ public class MainController {
     }
 
     @FXML private void initialize (){
+        System.out.println("Username: " + this.u.username);
+        homeController = new HomeController();
         homeController.injectMainController(this);
         //homeController.setWelcomeText(this.u);
     }

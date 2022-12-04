@@ -1,4 +1,4 @@
-package com.paypobre;
+package application;
 
 import db.User_db;
 import javafx.application.Application;
