@@ -15,23 +15,22 @@ import java.util.Objects;
 public class app extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        //Start Login
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
+        Scene scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
+        Image icon = new Image(Objects.requireNonNull(getClass().getResource("/images/icon/icon.png")).toString());
+        stage.getIcons().add(icon);
+        stage.setTitle("PayPobre - Welcome");
+        stage.setScene(scene);
+        stage.show();
 
         try{
-            //Start Login
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
-            Scene scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
-            Image icon = new Image(Objects.requireNonNull(getClass().getResource("/images/icon/icon.png")).toString());
-            stage.getIcons().add(icon);
-            stage.setTitle("PayPobre - Welcome");
-            stage.setScene(scene);
-            stage.show();
-
             //database
             User_db db = new User_db();
             db.connect();
         }
         catch (Exception e){
-            e.printStackTrace();
+            System.out.println("We couldn't connect to our database :(");
         }
     }
 

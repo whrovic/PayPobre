@@ -31,7 +31,6 @@ public class Login {
 
     @FXML
     protected void tryLogin(ActionEvent actionEvent) throws IOException {
-        //logMessage.setText("Our services are down :(");
         String email = emailField.getText();
         String pass = passField.getText();
 
@@ -50,8 +49,18 @@ public class Login {
         assert user.logMessage != null;
         if(user.logMessage.equals(LOGIN_SUCCESSFUL)){
             logMessage.setText(user.logMessage);
-            Home home = new Home(user);
-            home.start(stage);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tabview.fxml"));
+            root = loader.load();
+            TabView tabView = loader.getController();
+            tabView.setUser(user);
+            tabView.init(user);
+
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("PayPobre");
+            Scene scene = new Scene(root, WIDTH, HEIGHT);
+            stage.setScene(scene);
+            stage.show();
         }
         else logMessage.setText(user.logMessage);
     }
@@ -66,13 +75,5 @@ public class Login {
 
     public void goForgotPass(ActionEvent actionEvent) {
         logMessage.setText("Sorry, this feature is not implemented yet");
-    }
-
-    public void goHomePage(ActionEvent actionEvent, User user) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/home.fxml")));
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root, WIDTH, HEIGHT);
-        stage.setScene(scene);
-        stage.show();
     }
 }

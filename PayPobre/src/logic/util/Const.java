@@ -12,7 +12,6 @@ public final class Const {
     public static final String ERROR = "ERROR - Something Went Wrong";
 
     // Window Dimensions
-    public static final int WIDTH = 900;
-    public static final int HEIGHT = 500;
-
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 700;
 }
