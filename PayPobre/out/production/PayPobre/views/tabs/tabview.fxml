@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerTabs.MainController">
+   <children>
+      <TabPane prefHeight="700.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Home">
+               <fx:include fx:id="homeTab" source="home.fxml" />
+            </Tab>
+            <!--
+            <Tab text="Wallet">
+                <fx:include fx:id="walletTab" source="wallet.fxml" />
+            </Tab>
+            <Tab text="Transfers">
+                <fx:include fx:id="transfersTab" source="transfers.fxml" />
+            </Tab>
+            <Tab text="Profile">
+                <fx:include source="profile.fxml" />
+            </Tab>
+            -->
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
