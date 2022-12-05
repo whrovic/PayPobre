@@ -6,15 +6,14 @@ module com.paypobre {
 
 
     opens application to javafx.fxml;
-    opens controller to javafx.fxml;
-    opens controllerTabs to javafx.fxml;
+    opens authenticationController to javafx.fxml;
+    opens pageController to javafx.fxml;
 
     exports account;
     exports db;
     exports transactions;
     exports wallet;
     exports util;
-    exports controllerTabs;
 
     exports application;
 }
