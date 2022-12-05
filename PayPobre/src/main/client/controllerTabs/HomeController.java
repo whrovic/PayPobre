@@ -12,10 +12,9 @@ public class HomeController{
 
     public void injectMainController(MainController mainController){
         this.mainController = mainController;
-        welcomeText.setText("Welcome: " + mainController.u.username);
     }
 
     @FXML private void initialize(){
-        //welcomeText.setText("Welcome: " );
+        welcomeText.setText("Welcome " );
     }
 }

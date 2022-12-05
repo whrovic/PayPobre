@@ -23,14 +23,13 @@ public class User {
     }
 
     public User(User user){
-        if(user == null) return;
-        if(user.type.compareTo(PERSONAL)!=0) return;
+        //if(user == null) return;
 
-        this.user_id = user.user_id;
-        this.type = user.type;
-        this.email = user.email;
-        this.username = user.username;
-        this.wallet = user.wallet;
+        user_id = user.user_id;
+        type = user.type;
+        email = user.email;
+        username = user.username;
+        wallet = user.wallet;
     }
 
     public String Signup(String username, String email, String password, int card, String type){

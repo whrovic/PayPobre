@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import controllerTabs.*;
+import util.Const;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -51,12 +52,16 @@ public class Login {
         if(user.logMessage.equals(LOGIN_SUCCESSFUL)){
             logMessage.setText(user.logMessage);
 
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.close();
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/tabs/tabview.fxml"));
             root = loader.load();
-            //MainController mainController = loader.getController();
-            //mainController.setUser(user);
+            MainController mainController = new MainController();
+            mainController.setUserInfo(user);
 
-            //stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            loader.setController(mainController);
+
             stage.setScene(new Scene(root));
             stage.show();
         }
