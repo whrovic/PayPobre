@@ -17,9 +17,9 @@ public class User_db {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
+            //e.printStackTrace();
+            //System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            //System.exit(0);
             return e.getMessage();
         }
         return "Opened database successfully";

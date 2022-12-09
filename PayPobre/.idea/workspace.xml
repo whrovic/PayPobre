@@ -49,18 +49,18 @@
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15625",
     "project.structure.side.proportion": "0.37543452",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src\main\resources\views\pages" />
+      <recent name="..\src\main\resources\views\pages" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OneDrive\Faculdade\PSW\projects\t02_3\PayPobre\src" />
+      <recent name="..\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
