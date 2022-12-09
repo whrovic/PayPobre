@@ -15,6 +15,6 @@ public class Transfers extends GenericSubPage{
     }
 
     public void setPage(){
-        header.setText("Transfers - " + home.userName);
+        header.setText("Transfers - " + home.user.name);
     }
 }

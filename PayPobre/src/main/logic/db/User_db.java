@@ -1,6 +1,7 @@
 package db;
 
 import account.*;
+import util.Macros;
 
 import java.sql.*;
 
@@ -53,7 +54,7 @@ public class User_db {
         return output_msg;
     }
 
-    public String insertUser(String username, String email, String password, int card, String type, Date date, Double money){
+    public int insertUser(String username, String email, String password, int card, String type, Date date, Double money){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
@@ -62,8 +63,7 @@ public class User_db {
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
-            output_msg = "Registration Successful";
-            return output_msg;
+            return e_SIGNUP_SUCCESSFUL;
 
         }catch (Exception e) {
             try {
@@ -73,9 +73,9 @@ public class User_db {
                 stmt.executeQuery(query);
                 //System.out.println(rs);
                 //e.printStackTrace();
-                return "Email already exists";
+                return e_USER_ALREADY_EXISTS;
             } catch (SQLException ex) {
-                return e.getMessage();
+                return e_ERROR;
             }
         }
     }
@@ -91,7 +91,7 @@ public class User_db {
 
             while (rs.next()) {
                 user.user_id = rs.getInt(1);
-                user.username = rs.getString(2);
+                user.name = rs.getString(2);
                 userPass = rs.getString(3);
                 user.email = rs.getString(4);
                 user.created_on = rs.getDate(5);
@@ -103,11 +103,11 @@ public class User_db {
 
             assert userPass != null;
             if (userPass.compareTo(password) == 0){
-                user.logMessage = LOGIN_SUCCESSFUL;
+                user.logERROR = e_LOGIN_SUCCESSFUL;
                 return user;
             }
 
-            user.logMessage = INCORRECT_PASSWORD;
+            user.logERROR = e_WRONG_CREDENTIALS;
             stmt.close();
             c.close();
             return user;
@@ -127,7 +127,7 @@ public class User_db {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 user.user_id = rs.getInt(1);
-                user.username = rs.getString(2);
+                user.name = rs.getString(2);
                 user.email = rs.getString(4);
                 user.created_on = rs.getDate(5);
                 user.last_login = rs.getDate(6);

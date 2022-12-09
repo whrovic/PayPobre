@@ -8,8 +8,10 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import util.Const;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import static util.Const.HEIGHT;
 import static util.Const.WIDTH;
@@ -24,13 +26,14 @@ public class Home extends GenericPage {
 
     public void setPage(User user){
         setUserInfo(user);
-        welcomeText.setText("Welcome, " + userName);
-        accountTypeInfo.setText("You are using a " + accountType + " account");
+        welcomeText.setText("Welcome, " + user.name);
+        accountTypeInfo.setText("You are using a " + user.type + " account");
     }
+
     public void setPage(Home home){
         setUserInfo(home);
-        welcomeText.setText("Welcome, " + home.userName);
-        accountTypeInfo.setText("You are using a " + home.accountType + " account");
+        welcomeText.setText("Welcome, " + home.user.name);
+        accountTypeInfo.setText("You are using a " + home.user.type + " account");
     }
 
     @FXML private void initialize(){
@@ -75,7 +78,13 @@ public class Home extends GenericPage {
         stage.show();
     }
 
-    @FXML private void logout(ActionEvent actionEvent) {
+    @FXML private void logout(ActionEvent actionEvent) throws IOException {
+        // implement close connection
 
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
+        stage.setScene(scene);
+        stage.show();
     }
 }

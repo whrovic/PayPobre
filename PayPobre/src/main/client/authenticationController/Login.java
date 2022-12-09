@@ -19,19 +19,15 @@ import java.util.Objects;
 import static util.Const.*;
 
 public class Login {
-    @FXML
-    public TextField emailField;
-    @FXML
-    private PasswordField passField;
-    @FXML
+    @FXML public TextField emailField;
+    @FXML private PasswordField passField;
+    @FXML private Label logMessage;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    private Label logMessage;
 
-    @FXML
-    protected void tryLogin(ActionEvent actionEvent) throws IOException {
+    @FXML private void tryLogin(ActionEvent actionEvent) throws IOException {
         String email = emailField.getText();
         String pass = passField.getText();
 
@@ -47,21 +43,13 @@ public class Login {
             return;
         }
 
-        assert user.logMessage != null;
-        if(user.logMessage.equals(LOGIN_SUCCESSFUL)){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/pages/home.fxml"));
-            root = loader.load();
-            Home homeControl = loader.getController();
-            homeControl.setPage(user);
-
-            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root, WIDTH, HEIGHT));
-            stage.show();
+        switch (user.logERROR){
+            case e_LOGIN_SUCCESSFUL -> goToHome(actionEvent, user);
+            case e_WRONG_CREDENTIALS -> logMessage.setText("Invalid Credentials");
         }
-        else logMessage.setText(user.logMessage);
     }
 
-    public void SignupPage(ActionEvent actionEvent) throws IOException {
+    @FXML private void SignupPage(ActionEvent actionEvent) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/signup.fxml")));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root, WIDTH, HEIGHT);
@@ -69,7 +57,18 @@ public class Login {
         stage.show();
     }
 
-    public void goForgotPass(ActionEvent actionEvent) {
+    @FXML private void goForgotPass(ActionEvent actionEvent) {
         logMessage.setText("Sorry, this feature is not implemented yet");
+    }
+
+    private void goToHome(ActionEvent actionEvent, User user) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/pages/home.fxml"));
+        root = loader.load();
+        Home homeControl = loader.getController();
+        homeControl.setPage(user);
+
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root, WIDTH, HEIGHT));
+        stage.show();
     }
 }
