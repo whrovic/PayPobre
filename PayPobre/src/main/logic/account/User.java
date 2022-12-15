@@ -2,6 +2,7 @@ package account;
 
 import db.User_db;
 import util.Macros;
+import wallet.CreditCardValidation;
 import wallet.Wallet;
 
 import java.sql.Date;
@@ -45,13 +46,13 @@ public class User {
 
     public int Signup(String username, String email, String password, String cardStr, String type){
         Date date = new Date(System.currentTimeMillis());
-        int card = 0;
 
-        //if( (card = Macros.creditCardValidator(cardStr)) == 0 ) return e_INVALID_CREDIT_CARD;
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || type == null) return e_EMPTY_FIELDS;
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || type == null || cardStr == null) return e_EMPTY_FIELDS;
         if(!Macros.emailValidator(email)) return e_INVALID_EMAIL;
+        if(!CreditCardValidation.validation(cardStr)) return e_INVALID_CREDIT_CARD;
 
-        return user_db.insertUser(username, email, password, card, type, date, 0.0);
+        cardStr = cardStr.replaceAll("[^\\d.]", "");
+        return user_db.insertUser(username, email, password, cardStr, type, date, 0.0);
     }
 
     public User Login(String email, String password){

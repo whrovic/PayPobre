@@ -35,23 +35,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "../src/main/resources/views/pages",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15625",
-    "project.structure.side.proportion": "0.37543452",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;../src/main/resources/views/pages&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37543452&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="..\src\main\resources\views\pages" />
@@ -66,8 +66,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="account" />
       <recent name="wallet" />
+      <recent name="account" />
       <recent name="test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -89,48 +89,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreditCardValidationTest.prefixCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.logic.account.*" />
+          <option name="PATTERN" value="wallet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.logic.account" />
-      <option name="MAIN_CLASS_NAME" value="test.logic.account.UserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.logic.account.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.logic.account" />
-      <option name="MAIN_CLASS_NAME" value="test.logic.account.UserTest" />
-      <option name="METHOD_NAME" value="login" />
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="prefixCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.signup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreditCardValidationTest.runValidator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="wallet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.logic.account" />
-      <option name="MAIN_CLASS_NAME" value="test.logic.account.UserTest" />
-      <option name="METHOD_NAME" value="signup" />
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="runValidator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreditCardValidationTest.tryParse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wallet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="tryParse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreditCardValidationTest.validation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wallet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="validation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,9 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunApp" />
-        <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UserTest.login" />
-        <item itemvalue="JUnit.UserTest.signup" />
+        <item itemvalue="JUnit.CreditCardValidationTest.validation" />
+        <item itemvalue="JUnit.CreditCardValidationTest.prefixCheck" />
+        <item itemvalue="JUnit.CreditCardValidationTest.runValidator" />
+        <item itemvalue="JUnit.CreditCardValidationTest.tryParse" />
       </list>
     </recent_temporary>
   </component>

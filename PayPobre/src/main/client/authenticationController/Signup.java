@@ -3,6 +3,8 @@ package authenticationController;
 import account.Commercial;
 import account.Personal;
 import account.User;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pageController.Home;
@@ -37,7 +40,10 @@ public class Signup {
 
     @FXML private void initialize (){
         accType.setItems(FXCollections.observableArrayList("Personal", "Commercial"));
+        cardField.addEventFilter(KeyEvent.KEY_TYPED, Macros.numeric_Validation(16));
+        nameField.addEventFilter(KeyEvent.KEY_TYPED, Macros.letter_Validation(16));
     }
+
     @FXML private void trySignup(ActionEvent actionEvent) throws IOException {
         String name = nameField.getText();
         String email = emailField.getText();

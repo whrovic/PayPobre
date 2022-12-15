@@ -32,7 +32,6 @@ public class RunApp extends Application {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
         Scene scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
-
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("/images/icon/icon.png")).toString()));
         stage.setTitle("PayPobre");
         stage.setScene(scene);

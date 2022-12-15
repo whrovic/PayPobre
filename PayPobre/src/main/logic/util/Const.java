@@ -11,7 +11,8 @@ public final class Const {
     public static final int WIDTH = 1200;
     public static final int HEIGHT = 700;
 
-    // Error Control
+    //***********************ErrorControl*****************
+    //****************************************************
     public static final int e_LOGIN_SUCCESSFUL = 0x0000;
     public static final int e_USER_NOT_FOUND = 0x0001;
     public static final int e_WRONG_CREDENTIALS = 0x0002;
@@ -22,4 +23,12 @@ public final class Const {
     public static final int e_SIGNUP_SUCCESSFUL = 0x0010;
     public static final int e_EMPTY_FIELDS = 0xeeee;
     public static final int e_ERROR = 0xffff;
+
+    //  Credit Card Validator
+    public static final int prefix_VISA = 4;
+    public static final int prefix_MASTER = 5;
+    public static final int prefix_DISCOVER = 6;
+    public static final int prefix_AMERICAN_EXPRESS = 37;
+    //****************************************************
+    //****************************************************
 }

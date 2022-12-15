@@ -4,7 +4,7 @@ import account.*;
 import db.User_db;
 
 public class Wallet{
-    public long card;
+    public String card;
     public double money;
 
     //public Wallet(){ this.card = new Card(); }
@@ -23,5 +23,17 @@ public class Wallet{
         user.wallet.money = user.wallet.money - input;
         String sql = "UPDATE \"PayPobre\".users SET money = '" + user.wallet.money + "' WHERE email = '" + user.email + "'";
         return user_db.updateSQL(sql);
+    }
+
+    public String formatCard(long cardNumber) {
+        String cardString;
+        try {
+            cardString = Long.toString(cardNumber);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+
+        char delimiter = ' ';
+        return cardString.replaceAll(".{4}(?!$)", "$0" + delimiter);
     }
 }
