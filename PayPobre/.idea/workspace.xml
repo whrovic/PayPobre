@@ -4,7 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf27b8e-137d-4eca-be3a-9eaf3885c658" name="Changes" comment="" />
+    <list default="true" id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/checker-qual-3.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-4.13.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-4.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/postgresql-42.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PayPobre/classpath.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PayPobre/classpath.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/PayPobre/test/logic/account/UserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/application/RunApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/authenticationController/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/authenticationController/Signup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/GenericPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/GenericSubPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Profile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Transfers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Wallet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/account/Commercial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/account/Personal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/account/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/db/Transfers_db.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/db/User_db.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/transactions/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/util/Const.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/util/Macros.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/wallet/CreditCardValidation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/wallet/Wallet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dataTest/credit_cards.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/american.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/master.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/visa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/home/Wallet/pig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/home/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/home/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/icon/brand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/icon/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/signup/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/signup/hand_money.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/waller.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/transfers.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/wallet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/transfers.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/wallet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/signup.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/account/UserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/wallet/CreditCardValidationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/wallet/WalletTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +81,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -29,53 +95,26 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2ISi5fSvAz7CHZLxPkMM00BsWeH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2Ixpf4OLiLeOKBk6E83e2po6RR2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;../src/main/resources/views/pages&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15625&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37543452&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.37543452"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="..\src\main\resources\views\pages" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="..\src" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="wallet" />
-      <recent name="account" />
-      <recent name="test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="pageController.commercial" />
-      <recent name="pageController.personal" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.RunApp">
+}]]></component>
+  <component name="RunManager">
     <configuration name="RunApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.RunApp" />
       <module name="PayPobre" />
@@ -89,97 +128,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreditCardValidationTest.prefixCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wallet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="wallet" />
-      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
-      <option name="METHOD_NAME" value="prefixCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreditCardValidationTest.runValidator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wallet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="wallet" />
-      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
-      <option name="METHOD_NAME" value="runValidator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreditCardValidationTest.tryParse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wallet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="wallet" />
-      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
-      <option name="METHOD_NAME" value="tryParse" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreditCardValidationTest.validation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PayPobre" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="wallet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="wallet" />
-      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
-      <option name="METHOD_NAME" value="validation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunApp" />
-        <item itemvalue="JUnit.CreditCardValidationTest.validation" />
-        <item itemvalue="JUnit.CreditCardValidationTest.prefixCheck" />
-        <item itemvalue="JUnit.CreditCardValidationTest.runValidator" />
-        <item itemvalue="JUnit.CreditCardValidationTest.tryParse" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\Tiago\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bbf27b8e-137d-4eca-be3a-9eaf3885c658" name="Changes" comment="" />
-      <created>1670181205066</created>
+      <changelist id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="" />
+      <created>1671133188921</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670181205066</updated>
+      <updated>1671133188921</updated>
     </task>
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-    </ignored-roots>
   </component>
 </project>
