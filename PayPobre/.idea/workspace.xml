@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_base_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_base_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_controls_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_controls_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_fxml_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_graphics_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/postgresql.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/PayPobre.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/target/test-classes/UserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_19_ea_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Ixpf4OLiLeOKBk6E83e2po6RR2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.37543452",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.RunApp">
+    <configuration name="RunApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="application.RunApp" />
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreditCardValidationTest.prefixCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wallet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="prefixCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreditCardValidationTest.validation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wallet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wallet" />
+      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
+      <option name="METHOD_NAME" value="validation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RunApp" />
+        <item itemvalue="JUnit.CreditCardValidationTest.validation" />
+        <item itemvalue="JUnit.CreditCardValidationTest.prefixCheck" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="" />
+      <created>1671133188921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671133188921</updated>
+    </task>
+    <servers />
+  </component>
+</project>
