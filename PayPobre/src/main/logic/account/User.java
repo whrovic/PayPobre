@@ -47,7 +47,7 @@ public class User {
         Date date = new Date(System.currentTimeMillis());
         int card = 0;
 
-        if( (card = Macros.creditCardValidator(cardStr)) == 0 ) return e_INVALID_CREDIT_CARD;
+        //if( (card = Macros.creditCardValidator(cardStr)) == 0 ) return e_INVALID_CREDIT_CARD;
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || type == null) return e_EMPTY_FIELDS;
         if(!Macros.emailValidator(email)) return e_INVALID_EMAIL;
 
@@ -65,5 +65,9 @@ public class User {
         user_db.updateSQL(sql);
         user.last_login = date;
         return user;
+    }
+
+    public User(String email){
+        User u = user_db.querySQLfromEmail(email);
     }
 }

@@ -81,6 +81,7 @@ public class Home extends GenericPage {
     @FXML private void logout(ActionEvent actionEvent) throws IOException {
         // implement close connection
 
+
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/views/login.fxml")));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root, Const.WIDTH, Const.HEIGHT);

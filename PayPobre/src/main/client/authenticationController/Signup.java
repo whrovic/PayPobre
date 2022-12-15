@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pageController.Home;
 import util.Const;
@@ -49,6 +50,7 @@ public class Signup {
         int log = user.Signup(name, email, pass, card, type);
         user = user.setUser(name, email, type);
 
+        logMessage.setTextFill(Color.RED);
         switch (log){
             case e_INVALID_CREDIT_CARD -> logMessage.setText("Invalid Credit Card");
             case e_INVALID_EMAIL -> logMessage.setText("Please, insert a valid email:\n \texample@test.com");

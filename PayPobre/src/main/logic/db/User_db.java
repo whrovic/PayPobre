@@ -145,6 +145,33 @@ public class User_db {
         }
     }
 
+    public User querySQLfromEmail(String email){
+        User user = new User();
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                user.user_id = rs.getInt(1);
+                user.name = rs.getString(2);
+                user.email = rs.getString(4);
+                user.created_on = rs.getDate(5);
+                user.last_login = rs.getDate(6);
+                user.wallet.card = rs.getLong(7);
+                user.type = rs.getString(8);
+                user.wallet.money = rs.getDouble(9);
+            }
+            stmt.close();
+            c.close();
+            return user;
+
+        }catch (Exception e) {
+            //e.printStackTrace();
+            return null;
+        }
+    }
+
     public boolean updateSQL(String sql){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);

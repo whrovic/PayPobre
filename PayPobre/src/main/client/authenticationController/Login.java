@@ -1,6 +1,7 @@
 package authenticationController;
 
 import account.User;
+import javafx.scene.paint.Color;
 import pageController.Home;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +33,7 @@ public class Login {
         String pass = passField.getText();
 
         if(email.isEmpty() || pass.isEmpty()){
+            logMessage.setTextFill(Color.RED);
             logMessage.setText("You must fulfill everything");
             return;
         }
@@ -39,10 +41,12 @@ public class Login {
         User user = new User();
         user = user.Login(emailField.getText(), passField.getText());
         if(user == null){
+            logMessage.setTextFill(Color.RED);
             logMessage.setText("This user does not exit");
             return;
         }
 
+        logMessage.setTextFill(Color.RED);
         switch (user.logERROR){
             case e_LOGIN_SUCCESSFUL -> goToHome(actionEvent, user);
             case e_WRONG_CREDENTIALS -> logMessage.setText("Invalid Credentials");
@@ -58,6 +62,7 @@ public class Login {
     }
 
     @FXML private void goForgotPass(ActionEvent actionEvent) {
+        logMessage.setTextFill(Color.BLUE);
         logMessage.setText("Sorry, this feature is not implemented yet");
     }
 
