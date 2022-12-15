@@ -44,19 +44,18 @@ public class Wallet extends GenericSubPage {
     }
 
     @FXML private void deposit(ActionEvent actionEvent) {
-        logMessage.setText("");
-        depositAmount.clear();
         if (depositAmount.getText().isEmpty()) {
             logMessage.setText("This field is empty, please insert an amount");
             logMessage.setTextFill(Color.RED);
         }
 
-        double amount;
+        double amount = 0.0;
         try {
             amount = Double.parseDouble(depositAmount.getText());
         } catch (NumberFormatException e) {
             logMessage.setText("Please insert a valid amount to deposit");
             logMessage.setTextFill(Color.RED);
+            depositAmount.clear();
             return;
         }
 
@@ -73,20 +72,19 @@ public class Wallet extends GenericSubPage {
     }
 
     @FXML private void withdraw(ActionEvent actionEvent) {
-        logMessage.setText("");
-        withdrawAmount.clear();
         if (withdrawAmount.getText().isEmpty()) {
             logMessage.setText("This field is empty, please insert an amount");
             return;
         }
 
-        double amount;
+        double amount = 0.0;
         try {
             amount = Double.parseDouble(withdrawAmount.getText());
 
         } catch (NumberFormatException e) {
             logMessage.setText("Please insert a valid amount to withdraw");
             logMessage.setTextFill(Color.RED);
+            withdrawAmount.clear();
             return;
         }
 
@@ -96,6 +94,7 @@ public class Wallet extends GenericSubPage {
             return;
         }
 
+        withdrawAmount.clear();
         logMessage.setTextFill(Color.GREEN);
         logMessage.setText("You withdraw " + formatter.format(amount) + " successfully");
         balance = formatter.format(home.user.wallet.money);
