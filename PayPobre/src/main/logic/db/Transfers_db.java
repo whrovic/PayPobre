@@ -31,14 +31,16 @@ public class Transfers_db {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             output_msg = "Opened database successfully";
 
+
             Statement stmt = c.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS \"PayPobre\".Transfers (" +
                     "seller_id integer NOT NULL," +
                     "buyer_id text UNIQUE NOT NULL," +
                     "amount money NOT NULL," +
                     "trans_id text UNIQUE NOT NULL" +
-                    "done boolean NOT NULL" +
-                    "date date NOT NULL;";
+                    "state boolean NOT NULL" +
+                    "date text NOT NULL;";
+
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
@@ -51,26 +53,30 @@ public class Transfers_db {
         return output_msg;
     }
 
-    public int executeTransactionSQL(int seller_id, int buyer_id, Double amount, Date date){
+    public int executeTransactionSQL(int seller_id, int buyer_id, Double amount, String date){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String state = "Waiting";
+            String state = "Pending";
             Random rand = new Random();
+            System.out.println( "seller = " + seller_id + " buyer = " + buyer_id + " amount = " + amount + " date = " + date);
             int upperbound = 999999;
             int trans_id = rand.nextInt(upperbound);
-            String sql = "INSERT into \"PayPobre\".Transfers (seller_id, buyer_id, amount, trans_id, done, date)"+
+            String sql = "INSERT into \"PayPobre\".Transfers (seller_id, buyer_id, amount, trans_id, state, date)"+
                     "VALUES ('"+ seller_id +"', '"+ buyer_id +"', '"+ amount +"', '"+ trans_id +"', '"+ state + "', '"+ date +"')";
+            /*
             while(stmt.executeUpdate(sql) == -1){
                 trans_id = rand.nextInt(upperbound);
                 sql = "INSERT into \"PayPobre\".Transfers (seller_id, buyer_id, amount, trans_id, done, date)"+
                         "VALUES ('"+ seller_id +"', '"+ buyer_id +"', '"+ amount +"', '"+ trans_id +"', '"+ state + "', '"+ date +"')";
-            }
+            }*/
+            stmt.executeUpdate(sql);
             stmt.close();
             c.close();
             return trans_id;
 
         }catch (Exception e) {
+            e.printStackTrace();
             return -1;
         }
     }

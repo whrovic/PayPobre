@@ -6,6 +6,8 @@ import wallet.CreditCardValidation;
 import wallet.Wallet;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static util.Const.*;
 
@@ -13,8 +15,8 @@ public class User {
     public String name;
     public String email;
     public String type;
-    public Date last_login;
-    public Date created_on;
+    public String last_login;
+    public String created_on;
     public int user_id;
     public int logERROR;
     public Wallet wallet;
@@ -56,7 +58,10 @@ public class User {
     }
 
     public User Login(String email, String password){
-        Date date = new Date(System.currentTimeMillis());
+        LocalDateTime oldDate = LocalDateTime.now();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String date = oldDate.format(dateFormat);
+
         User user = user_db.queryLogIn(email, password);
 
         if(user == null) return null;

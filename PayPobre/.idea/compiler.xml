@@ -9,5 +9,8 @@
         <module name="PayPobre" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PayPobre" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -64,6 +64,7 @@ public class Wallet extends GenericSubPage {
             logMessage.setTextFill(Color.RED);
             return;
         }
+        depositAmount.clear();
         logMessage.setText("You deposited " + formatter.format(amount) + " successfully!");
         logMessage.setTextFill(Color.GREEN);
         balance = formatter.format(home.user.wallet.money);
