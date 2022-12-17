@@ -9,6 +9,7 @@ public final class Const {
     public static final String PENDING = "Pending";
     public static final String DONE = "Done";
     public static final String CANCELED = "Canceled";
+    public static final String INSTANTANEOUS = "Instantaneous";
 
 
     // Window Dimensions

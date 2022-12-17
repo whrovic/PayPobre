@@ -25,7 +25,7 @@ class Transfers_dbTest {
     @Test
     void executeTransactionSQL() {
         var trans = new Transfers_db();
-        System.out.println(trans.executeTransactionSQL(68, 70, 1000.0, "1"));
+        System.out.println(trans.executeTransactionSQL(68, 70, 1000.0, "1", PENDING));
     }
 
     @Test
@@ -45,13 +45,12 @@ class Transfers_dbTest {
     @Test
     void queryStateSQL() {
         var transDB = new Transfers_db();
-        Transaction[] trans = new Transaction[0];
         int i = 0;
-        while ((trans[i] = transDB.queryStateSQL(PENDING)) != null ){
+        var trans = transDB.queryStateSQL(PENDING);
+        while (i < trans.length){
             System.out.println("trans ID = " + trans[i].trans_id + " seller ID = " + trans[i].seller_id);
             i++;
         }
-
         //System.out.println("trans ID = " + trans.trans_id + " seller ID = " + trans.seller_id);
     }
 }

@@ -1,7 +1,6 @@
 package db;
 
 import account.*;
-import util.Macros;
 
 import java.sql.*;
 
@@ -115,7 +114,7 @@ public class User_db {
         }
     }
 
-    public User querySQL(int ID){
+    public User queryUserSQL(int ID){
         User user = new User();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
@@ -162,7 +161,6 @@ public class User_db {
             return null;
         }
     }
-
     public boolean updateSQL(String sql){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);

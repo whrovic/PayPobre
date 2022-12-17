@@ -5,36 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/card/discover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/card/express.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/card/master.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/card/visa.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PayPobre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PayPobre.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/pageController/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Transfers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/pageController/Transfers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/pageController/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/pageController/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/account/Commercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/account/Commercial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/account/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/account/Personal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/db/Transfers_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/db/Transfers_db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/transactions/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/transactions/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logic/db/User_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/db/User_db.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logic/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/util/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/american.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/master.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cards/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/transfers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/pages/transfers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/waller.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/transfers.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/wallet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/pages/profile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/wallet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/pages/wallet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/account/CommercialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/account/CommercialTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/test/db/Transfers_dbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/db/Transfers_dbTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/Commercial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/Commercial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/account/Personal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/Personal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/db/Transfers_db.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/Transfers_db.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cards/american.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cards/master.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cards/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pageController/Transfers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageController/Transfers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pageController/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageController/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages/transfers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/pages/transfers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/User_db.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/User_db.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/waller.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pageController/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageController/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/profile.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/transfers.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/wallet.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/pages/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/pages/profile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/views/pages/wallet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/pages/wallet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,22 +73,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15625",
-    "project.structure.side.proportion": "0.37543452",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37543452&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.RunApp">
+}</component>
+  <component name="RunManager" selected="JUnit.CommercialTest.testSendMoney">
     <configuration name="RunApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.RunApp" />
       <module name="PayPobre" />
@@ -103,17 +102,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreditCardValidationTest.prefixCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommercialTest.testSendMoney" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PayPobre" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wallet.*" />
+          <option name="PATTERN" value="account.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="wallet" />
-      <option name="MAIN_CLASS_NAME" value="wallet.CreditCardValidationTest" />
-      <option name="METHOD_NAME" value="prefixCheck" />
+      <option name="PACKAGE_NAME" value="account" />
+      <option name="MAIN_CLASS_NAME" value="account.CommercialTest" />
+      <option name="METHOD_NAME" value="testSendMoney" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,11 +134,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Transfers_dbTest.executeTransactionSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="db" />
+      <option name="MAIN_CLASS_NAME" value="db.Transfers_dbTest" />
+      <option name="METHOD_NAME" value="executeTransactionSQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Transfers_dbTest.queryStateSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PayPobre" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="db" />
+      <option name="MAIN_CLASS_NAME" value="db.Transfers_dbTest" />
+      <option name="METHOD_NAME" value="queryStateSQL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommercialTest.testSendMoney" />
+        <item itemvalue="JUnit.Transfers_dbTest.queryStateSQL" />
+        <item itemvalue="JUnit.Transfers_dbTest.executeTransactionSQL" />
         <item itemvalue="Application.RunApp" />
         <item itemvalue="JUnit.CreditCardValidationTest.validation" />
-        <item itemvalue="JUnit.CreditCardValidationTest.prefixCheck" />
       </list>
     </recent_temporary>
   </component>

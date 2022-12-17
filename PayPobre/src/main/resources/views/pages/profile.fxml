@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +16,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pageController.Profile">
     <columnConstraints>
@@ -21,31 +29,388 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <AnchorPane scaleShape="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-            <children>
-                <ImageView fitHeight="1146.0" fitWidth="1943.0" layoutY="-6.0" nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../images/signup/background.jpg" />
-                    </image>
-                    <viewport>
-                        <Rectangle2D />
-                    </viewport>
-                </ImageView>
-                <AnchorPane layoutX="620.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-                    <effect>
-                        <DropShadow height="42.0" radius="20.5" width="42.0" />
-                    </effect>
+          <ImageView fitHeight="1146.0" fitWidth="1943.0" nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="@../../images/signup/background.jpg" />
+              </image>
+              <viewport>
+                  <Rectangle2D />
+              </viewport>
+          </ImageView>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <effect>
+            <DropShadow height="42.0" radius="20.5" width="42.0" />
+         </effect>
+         <children>
+            <Region layoutY="20.0" prefHeight="20.0" prefWidth="680.0" style="-fx-background-color: #7fffd4;" />
+            <ToolBar prefHeight="40.0" prefWidth="680.0" style="-fx-background-color: #7fffd4; -fx-background-radius: 10;">
+               <items>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 4;" text="Home">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/icon/icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets top="-1.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Label fx:id="header" maxWidth="1.7976931348623157E308" prefHeight="29.0" text="Profile" translateX="1.0">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+               </items>
+            </ToolBar>
+            <ImageView fitHeight="175.0" fitWidth="175.0" layoutX="35.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0">
+               <image>
+                  <Image url="@../../images/home/avatar.png" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="230.0" layoutY="105.0" prefHeight="90.0" prefWidth="380.0" AnchorPane.leftAnchor="230.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="21.0" minHeight="9.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <ToolBar prefHeight="40.0" prefWidth="680.0" style="-fx-background-color: #5ac5cf;">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#backHome" text="&lt;" />
-                        <Label fx:id="header" text="Profile - Header" />
-                    </items>
-                  </ToolBar>
-                  <Separator layoutX="252.0" layoutY="46.0" orientation="VERTICAL" prefHeight="400.0" />
+                  <Label fx:id="name" text="Name Surname">
+                     <font>
+                        <Font name="Arial" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="email" text="exemplo@gmail.com" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="memberDate" text="Member since October 12, 2022" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
                </children>
-                </AnchorPane>
-            </children>
-        </AnchorPane>
+            </GridPane>
+            <Separator prefWidth="580.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="250.0" />
+            <GridPane layoutX="83.0" layoutY="277.0" prefHeight="115.0" prefWidth="279.0" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="280.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints minHeight="2.0" prefHeight="2.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints minHeight="2.0" prefHeight="2.0" valignment="CENTER" vgrow="NEVER" />
+                  <RowConstraints valignment="CENTER" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="upProfile" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#upProfileOnAction" onMouseEntered="#upProfileOnMouseEntered" onMouseExited="#upProfileOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Update profile" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets right="170.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="changeCard" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changeCardOnAction" onMouseEntered="#changeCardOnMouseEntered" onMouseExited="#changeCardOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Change credit card" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets right="135.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="changePass" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changePassOnAction" onMouseEntered="#changePassOnMouseEntered" onMouseExited="#changePassOnMouseExited" prefHeight="40.0" prefWidth="391.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" text="Change password" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets right="140.0" />
+                     </padding>
+                  </Button>
+                  <Separator prefWidth="200.0" translateY="1.0" GridPane.rowIndex="1" />
+                  <Separator prefWidth="200.0" translateY="1.0" GridPane.rowIndex="3" />
+                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../images/home/img.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0" GridPane.halignment="RIGHT">
+                     <image>
+                        <Image url="@../../images/home/img.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../images/home/img.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <Button layoutX="409.0" layoutY="358.0" mnemonicParsing="false" onAction="#aboutUsOnAction" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="About Us" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="418.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="118.0" fitWidth="208.0" layoutX="401.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icon/brand.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="532.0" layoutY="364.0" mnemonicParsing="false" onAction="#helpOnAction" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Help" AnchorPane.leftAnchor="510.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox fx:id="upProfilePopup" layoutX="119.0" layoutY="100.0" visible="false">
+               <children>
+                  <AnchorPane style="-fx-background-color: transparent;">
+                     <children>
+                        <DialogPane expanded="true" prefHeight="300.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;">
+                           <header>
+                              <ToolBar prefHeight="35.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: whitesmoke;">
+                                 <items>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="435.0" text="Update profile">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </header>
+                        </DialogPane>
+                        <Region layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.leftAnchor="1.0" />
+                        <Region layoutX="385.0" layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.rightAnchor="1.5" />
+                        <Button layoutX="301.0" layoutY="271.0" mnemonicParsing="false" onAction="#closeUpProfile" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <GridPane layoutX="40.0" layoutY="69.0" prefHeight="150.0" prefWidth="370.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="84.0" prefWidth="84.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="285.0" prefWidth="285.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="New name:">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="New email:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nameField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Name" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="emailField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="Password:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </GridPane>
+                        <Button layoutX="320.0" layoutY="270.0" mnemonicParsing="false" onAction="#applyUpProfile" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Apply" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="107.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox fx:id="changeCardPopup" layoutX="160.0" layoutY="113.0" visible="false">
+               <children>
+                  <AnchorPane fx:id="upProfilePopup1" style="-fx-background-color: transparent;">
+                     <children>
+                        <DialogPane contentText="This is us&#10;We gon' fuss&#10;And we gon' fight&#10;And we gon' roll&#10;And live our life&#10;So what we get drunk&#10;So what we don't sleep&#10;We're just having fun&#10;We don't care who sees&#10;So what we go out&#10;That's how it's supposed to be&#10;Living young and wild and free" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;">
+                           <header>
+                              <ToolBar prefHeight="35.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: whitesmoke;">
+                                 <items>
+                                    <Label alignment="CENTER" prefWidth="385.0" text="About Us">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </header>
+                        </DialogPane>
+                        <Region layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.leftAnchor="1.0" />
+                        <Region layoutX="385.0" layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.rightAnchor="1.5" />
+                        <Button layoutX="301.0" layoutY="271.0" mnemonicParsing="false" onAction="#closeAboutUs" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox fx:id="changePassPopup" layoutX="170.0" layoutY="123.0" visible="false">
+               <children>
+                  <AnchorPane fx:id="upProfilePopup11" style="-fx-background-color: transparent;">
+                     <children>
+                        <DialogPane contentText="This is us&#10;We gon' fuss&#10;And we gon' fight&#10;And we gon' roll&#10;And live our life&#10;So what we get drunk&#10;So what we don't sleep&#10;We're just having fun&#10;We don't care who sees&#10;So what we go out&#10;That's how it's supposed to be&#10;Living young and wild and free" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;">
+                           <header>
+                              <ToolBar prefHeight="35.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: whitesmoke;">
+                                 <items>
+                                    <Label alignment="CENTER" prefWidth="385.0" text="About Us">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </header>
+                        </DialogPane>
+                        <Region layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.leftAnchor="1.0" />
+                        <Region layoutX="385.0" layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.rightAnchor="1.5" />
+                        <Button layoutX="301.0" layoutY="271.0" mnemonicParsing="false" onAction="#closeAboutUs" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox fx:id="aboutUsPopup" layoutX="140.0" layoutY="93.0" visible="false">
+               <children>
+                  <AnchorPane style="-fx-background-color: transparent;">
+                     <children>
+                        <DialogPane contentText="This is us&#10;We gon' fuss&#10;And we gon' fight&#10;And we gon' roll&#10;And live our life&#10;So what we get drunk&#10;So what we don't sleep&#10;We're just having fun&#10;We don't care who sees&#10;So what we go out&#10;That's how it's supposed to be&#10;Living young and wild and free" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;">
+                           <header>
+                              <ToolBar prefHeight="35.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: whitesmoke;">
+                                 <items>
+                                    <Label alignment="CENTER" prefWidth="385.0" text="About Us">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </header>
+                        </DialogPane>
+                        <Region layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.leftAnchor="1.0" />
+                        <Region layoutX="385.0" layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.rightAnchor="1.5" />
+                        <Button layoutX="301.0" layoutY="271.0" mnemonicParsing="false" onAction="#closeAboutUs" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox fx:id="helpPopup" layoutX="140.0" layoutY="93.0" visible="false">
+               <children>
+                  <AnchorPane style="-fx-background-color: transparent;">
+                     <children>
+                        <DialogPane contentText="We can not help you yet!" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;">
+                           <header>
+                              <ToolBar prefHeight="35.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: whitesmoke;">
+                                 <items>
+                                    <Label alignment="CENTER" prefWidth="385.0" text="Help">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </header>
+                        </DialogPane>
+                        <Region layoutX="385.0" layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.rightAnchor="1.5" />
+                        <Region layoutY="23.0" prefHeight="13.0" prefWidth="13.0" style="-fx-background-color: whitesmoke;" AnchorPane.leftAnchor="1.5" />
+                        <Button layoutX="161.0" layoutY="271.0" mnemonicParsing="false" onAction="#closeHelp" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Close" AnchorPane.bottomAnchor="15.0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
     </children>
 </GridPane>
