@@ -5,36 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c887ae12-760e-4dff-ab33-3d4befc7d4de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_base_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_base_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_controls_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_controls_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_fxml_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_graphics_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/libraries/postgresql.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/PayPobre.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PayPobre.bak/target/test-classes/UserTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/pageController/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/pageController/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/account/Commercial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/account/Commercial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/account/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/account/Personal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/db/Transfers_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/db/Transfers_db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/db/User_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/db/User_db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logic/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logic/util/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/waller.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/home.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/profile.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/transfers.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages.old/wallet.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/pages/profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/pages/wallet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/pages/wallet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/account/CommercialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/account/CommercialTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/db/Transfers_dbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/db/Transfers_dbTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/account/Commercial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/Commercial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/account/Personal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/account/Personal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/Transfers_db.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/Transfers_db.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/User_db.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/User_db.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/waller.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pageController/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pageController/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/home.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/profile.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/transfers.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages.old/wallet.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/pages/profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/pages/wallet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/pages/wallet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
