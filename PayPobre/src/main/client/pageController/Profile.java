@@ -16,13 +16,20 @@ public class Profile extends GenericSubPage {
 
     @FXML private Label header;
 
-    @FXML
-    private void backHome(ActionEvent actionEvent) throws IOException {
+    @FXML private void initialize(){
+        upProfilePopup.setVisible(false);
+        changeCardPopup.setVisible(false);
+        changePassPopup.setVisible(false);
+        aboutUsPopup.setVisible(false);
+        helpPopup.setVisible(false);
+    }
+
+    @FXML private void backHome(ActionEvent actionEvent) throws IOException {
         goToHome(actionEvent);
     }
 
     public void setPage() {
-        header.setText("Profile - " + home.user.name);
+        header.setText(home.user.name);
     }
 
     @FXML private Button upProfile;
@@ -34,13 +41,6 @@ public class Profile extends GenericSubPage {
     @FXML private HBox aboutUsPopup;
     @FXML private HBox helpPopup;
 
-    @FXML private void initialize(){
-        upProfilePopup.setVisible(false);
-        changeCardPopup.setVisible(false);
-        changePassPopup.setVisible(false);
-        aboutUsPopup.setVisible(false);
-        helpPopup.setVisible(false);
-    }
 
     @FXML private void upProfileOnMouseEntered(MouseEvent actionEvent) {
         upProfile.setStyle("-fx-background-color: whitesmoke");
@@ -73,13 +73,29 @@ public class Profile extends GenericSubPage {
     }
 
     @FXML private void closeUpProfile(ActionEvent actionEvent) {
-            upProfilePopup.setVisible(false);
+        upProfilePopup.setVisible(false);
     }
 
     @FXML private void changeCardOnAction(ActionEvent actionEvent) {
+        changeCardPopup.setVisible(true);
+    }
+
+    @FXML private void applyChangeCard(ActionEvent actionEvent) {
+    }
+
+    @FXML private void closeChangeCard(ActionEvent actionEvent) {
+        changeCardPopup.setVisible(false);
     }
 
     @FXML private void changePassOnAction(ActionEvent actionEvent) {
+        changePassPopup.setVisible(true);
+    }
+
+    @FXML private void applyChangePass(ActionEvent actionEvent) {
+    }
+
+    @FXML private void closeChangePass(ActionEvent actionEvent) {
+        changePassPopup.setVisible(false);
     }
 
     @FXML private void aboutUsOnAction(ActionEvent actionEvent) {
