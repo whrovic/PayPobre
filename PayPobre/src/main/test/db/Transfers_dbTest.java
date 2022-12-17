@@ -1,8 +1,11 @@
 package db;
 
+import account.Commercial;
 import org.junit.jupiter.api.Test;
+import transactions.Transaction;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static util.Const.*;
 
 class Transfers_dbTest {
 
@@ -21,13 +24,34 @@ class Transfers_dbTest {
 
     @Test
     void executeTransactionSQL() {
+        var trans = new Transfers_db();
+        System.out.println(trans.executeTransactionSQL(68, 70, 1000.0, "1"));
     }
 
     @Test
     void updateTransactionSQL() {
+        var trans = new Transfers_db();
+        System.out.println(trans.updateTransactionSQL(72386, DONE));
     }
 
     @Test
     void querySQL() {
+        var transDB = new Transfers_db();
+        var trans = new Transaction();
+        trans = transDB.querySQL(138312);
+        System.out.println("trans ID = "+ trans.trans_id + " seller ID = " + trans.seller_id);
+    }
+
+    @Test
+    void queryStateSQL() {
+        var transDB = new Transfers_db();
+        Transaction[] trans = new Transaction[0];
+        int i = 0;
+        while ((trans[i] = transDB.queryStateSQL(PENDING)) != null ){
+            System.out.println("trans ID = " + trans[i].trans_id + " seller ID = " + trans[i].seller_id);
+            i++;
+        }
+
+        //System.out.println("trans ID = " + trans.trans_id + " seller ID = " + trans.seller_id);
     }
 }

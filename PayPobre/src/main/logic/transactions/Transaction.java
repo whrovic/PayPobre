@@ -10,10 +10,10 @@ public class Transaction {
     public double amount;
     public int trans_id;
     public String state;
-    public Date date;
+    public String date;
     Transfers_db transfers_db = new Transfers_db();
 
-    public Transaction (int seller_id, int buyer_id, double amount, int trans_id, String state, Date date){
+    public Transaction (int seller_id, int buyer_id, double amount, int trans_id, String state, String date){
         this.seller_id = seller_id;
         this.buyer_id = buyer_id;
         this.amount = amount;

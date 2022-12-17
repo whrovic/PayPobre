@@ -6,6 +6,10 @@ public final class Const {
     // Account types
     public static final String COMMERCIAL = "Commercial";
     public static final String PERSONAL = "Personal";
+    public static final String PENDING = "Pending";
+    public static final String DONE = "Done";
+    public static final String CANCELED = "Canceled";
+
 
     // Window Dimensions
     public static final int WIDTH = 1200;

@@ -4,7 +4,6 @@ module com.paypobre {
     requires java.sql;
     requires org.postgresql.jdbc;
 
-
     opens application to javafx.fxml;
     opens authenticationController to javafx.fxml;
     opens pageController to javafx.fxml;

@@ -13,8 +13,7 @@ import util.Const;
 import java.io.IOException;
 import java.util.Objects;
 
-import static util.Const.HEIGHT;
-import static util.Const.WIDTH;
+import static util.Const.*;
 
 public class Home extends GenericPage {
 
@@ -53,6 +52,18 @@ public class Home extends GenericPage {
     }
 
     @FXML private void goToTrasnfers(ActionEvent actionEvent) throws IOException {
+        switch(this.user.type){
+            case(COMMERCIAL):
+
+                break;
+            case(PERSONAL):
+
+                break;
+
+            default:
+                break;
+        }
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/pages/transfers.fxml"));
         root = loader.load();
         transfers = loader.getController();
