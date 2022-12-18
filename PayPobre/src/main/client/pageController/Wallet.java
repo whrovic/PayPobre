@@ -31,7 +31,6 @@ public class Wallet extends GenericSubPage {
     @FXML private TextField depositAmount;
     @FXML private Label cardBalance;
     @FXML private Label cardNumber;
-    @FXML private AnchorPane cardBackground;
     @FXML private Label header;
 
     public void setPage(){
@@ -39,7 +38,7 @@ public class Wallet extends GenericSubPage {
 
         logMessage.setText("");
         balance = formatter.format(home.user.wallet.money);
-        header.setText("Wallet - " + home.user.name);
+        header.setText(home.user.name);
         cardBalance.setText("Balance: " + balance);
         cardNumber.setText("**** **** **** " + home.user.wallet.card.substring(home.user.wallet.card.length() - 4));
         prefixCard = CreditCardValidation.prefixCheck(home.user.wallet.card);
@@ -116,7 +115,7 @@ public class Wallet extends GenericSubPage {
 
         withdrawAmount.clear();
         logMessage.setTextFill(Color.GREEN);
-        logMessage.setText("You withdraw " + formatter.format(amount) + " successfully");
+        logMessage.setText("You withdrew " + formatter.format(amount) + " successfully");
         balance = formatter.format(home.user.wallet.money);
         cardBalance.setText("Balance: " + balance);
     }

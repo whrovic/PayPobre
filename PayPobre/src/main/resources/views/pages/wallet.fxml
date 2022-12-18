@@ -27,14 +27,14 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-          <ImageView fitHeight="1146.0" fitWidth="1943.0" nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../images/signup/background.jpg" />
-              </image>
-              <viewport>
-                  <Rectangle2D />
-              </viewport>
-          </ImageView>
+      <ImageView nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/signup/background.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
               <effect>
                   <DropShadow height="42.0" radius="20.5" width="42.0" />
@@ -43,17 +43,17 @@
             <Region layoutY="20.0" prefHeight="20.0" prefWidth="680.0" style="-fx-background-color: #7fffd4;" />
             <ToolBar prefHeight="40.0" prefWidth="680.0" style="-fx-background-color: #7fffd4; -fx-background-radius: 10;">
               <items>
-                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="29.0" prefWidth="70.0" style="-fx-background-radius: 4;" text="Home" textFill="#1687dd">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 4;" text="Home">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <font>
-                        <Font name="Arial" size="14.0" />
+                        <Font name="Arial" size="16.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/home/5974636.png" />
+                              <Image url="@../../images/icon/icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,14 +61,19 @@
                         <Insets top="-1.0" />
                      </padding>
                   </Button>
-                  <Label fx:id="header" alignment="CENTER" prefHeight="29.0" prefWidth="60.0" text="Wallet">
+                  <Label alignment="CENTER" prefHeight="29.0" text="Wallet" translateX="5.0">
                      <font>
-                        <Font name="Arial" size="18.0" />
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="header" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="540.0" text="Name Surname" translateX="-5.0">
+                     <font>
+                        <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
               </items>
             </ToolBar>
-            <AnchorPane fx:id="cardBackground" layoutX="37.0" layoutY="152.0" prefHeight="167.11" prefWidth="265.0" AnchorPane.bottomAnchor="143.66666666666666" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="378.6666666666667" AnchorPane.topAnchor="149.0">
+            <AnchorPane layoutX="37.0" layoutY="152.0" prefHeight="167.11" prefWidth="265.0" AnchorPane.bottomAnchor="143.66666666666666" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="378.6666666666667" AnchorPane.topAnchor="149.0">
                <children>
                   <ImageView fx:id="cardVector" fitHeight="168.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                      <image>

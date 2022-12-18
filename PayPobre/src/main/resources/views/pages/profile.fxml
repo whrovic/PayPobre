@@ -29,14 +29,14 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-          <ImageView fitHeight="1146.0" fitWidth="1943.0" nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../../images/signup/background.jpg" />
-              </image>
-              <viewport>
-                  <Rectangle2D />
-              </viewport>
-          </ImageView>
+      <ImageView nodeOrientation="INHERIT" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/signup/background.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <effect>
             <DropShadow height="42.0" radius="20.5" width="42.0" />
@@ -66,7 +66,12 @@
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <Label fx:id="header" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="80.0" text="Profile" translateX="1.0">
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="29.0" text="Profile" translateX="5.0">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="header" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="538.0" text="Name Surname" translateX="-5.0">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -119,7 +124,7 @@
                   <RowConstraints valignment="CENTER" vgrow="NEVER" />
               </rowConstraints>
                <children>
-                  <Button fx:id="upProfile" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#upProfileOnAction" onMouseEntered="#upProfileOnMouseEntered" onMouseExited="#upProfileOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Update profile" GridPane.valignment="CENTER">
+                  <Button fx:id="upProfile" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#upProfileOnAction" onMouseEntered="#upProfileOnMouseEntered" onMouseExited="#upProfileOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Update Profile" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -133,7 +138,7 @@
                         <Insets right="170.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="changeCard" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changeCardOnAction" onMouseEntered="#changeCardOnMouseEntered" onMouseExited="#changeCardOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Change credit card" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Button fx:id="changeCard" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changeCardOnAction" onMouseEntered="#changeCardOnMouseEntered" onMouseExited="#changeCardOnMouseExited" prefHeight="40.0" prefWidth="279.0" style="-fx-background-color: transparent; -fx-background-radius: 0;" text="Change Credit Card" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -141,10 +146,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <padding>
-                        <Insets right="135.0" />
+                        <Insets right="130.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="changePass" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changePassOnAction" onMouseEntered="#changePassOnMouseEntered" onMouseExited="#changePassOnMouseExited" prefHeight="40.0" prefWidth="391.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" text="Change password" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <Button fx:id="changePass" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#changePassOnAction" onMouseEntered="#changePassOnMouseEntered" onMouseExited="#changePassOnMouseExited" prefHeight="40.0" prefWidth="391.0" style="-fx-background-radius: 0; -fx-background-color: transparent;" text="Change Password" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -455,7 +460,7 @@
                <children>
                   <AnchorPane style="-fx-background-color: transparent;">
                      <children>
-                        <DialogPane contentText="This is us&#10;We gon' fuss&#10;And we gon' fight&#10;And we gon' roll&#10;And live our life&#10;So what we get drunk&#10;So what we don't sleep&#10;We're just having fun&#10;We don't care who sees&#10;So what we go out&#10;That's how it's supposed to be&#10;Living young and wild and free" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <DialogPane contentText="PayPobre resulted from a joint effort by Alexandre Mourão, Pedro Duarte and Tiago Ribeiro for a college project within the scope of the Software Project course." expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <header>
                               <ToolBar prefHeight="40.0" prefWidth="397.0" style="-fx-background-color: gainsboro; -fx-background-radius: 10;">
                                  <items>
@@ -492,7 +497,7 @@
                <children>
                   <AnchorPane style="-fx-background-color: transparent;">
                      <children>
-                        <DialogPane contentText="We can not help you yet!" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.3333333333333144" AnchorPane.topAnchor="0.0">
+                        <DialogPane contentText="If you need help, you can contact us via our email: paypobre_suporte@gmail.com" expanded="true" prefHeight="315.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0.3333333333333144" AnchorPane.topAnchor="0.0">
                            <header>
                               <ToolBar prefHeight="40.0" prefWidth="397.0" style="-fx-background-radius: 10; -fx-background-color: gainsboro;">
                                  <items>

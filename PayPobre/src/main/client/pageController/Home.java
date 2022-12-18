@@ -26,13 +26,13 @@ public class Home extends GenericPage {
     public void setPage(User user){
         setUserInfo(user);
         welcomeText.setText("Welcome, " + user.name);
-        accountTypeInfo.setText("You are using a " + user.type + " account");
+        accountTypeInfo.setText("You are using a " + user.type + " Account");
     }
 
     public void setPage(Home home){
         setUserInfo(home);
         welcomeText.setText("Welcome, " + home.user.name);
-        accountTypeInfo.setText("You are using a " + home.user.type + " account");
+        accountTypeInfo.setText("You are using a " + home.user.type + " Account");
     }
 
     @FXML private void initialize(){

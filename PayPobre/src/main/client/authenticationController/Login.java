@@ -42,7 +42,7 @@ public class Login {
         user = user.Login(emailField.getText(), passField.getText());
         if(user == null){
             logMessage.setTextFill(Color.RED);
-            logMessage.setText("This user does not exit");
+            logMessage.setText("This user does not exist");
             return;
         }
 
@@ -59,11 +59,6 @@ public class Login {
         scene = new Scene(root, WIDTH, HEIGHT);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML private void goForgotPass(ActionEvent actionEvent) {
-        logMessage.setTextFill(Color.BLUE);
-        logMessage.setText("Sorry, this feature is not implemented yet");
     }
 
     private void goToHome(ActionEvent actionEvent, User user) throws IOException {
