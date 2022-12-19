@@ -1,6 +1,7 @@
 package pageController;
 
 import account.*;
+import db.User_db;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ public class Home extends GenericPage {
     private Wallet wallet;
     private Transfers transfers;
     private Profile profile;
+    private User_db user_db = new User_db();
 
     public void setPage(User user){
         setUserInfo(user);
@@ -30,7 +32,7 @@ public class Home extends GenericPage {
     }
 
     public void setPage(Home home){
-        setUserInfo(home);
+        setUserInfo(user_db.querySQLfromEmail(home.user.email));
         welcomeText.setText("Welcome, " + home.user.name);
         accountTypeInfo.setText("You are using a " + home.user.type + " Account");
     }
@@ -51,19 +53,7 @@ public class Home extends GenericPage {
         stage.show();
     }
 
-    @FXML private void goToTrasnfers(ActionEvent actionEvent) throws IOException {
-        switch(this.user.type){
-            case(COMMERCIAL):
-
-                break;
-            case(PERSONAL):
-
-                break;
-
-            default:
-                break;
-        }
-
+    @FXML private void goToTransfers(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/pages/transfers.fxml"));
         root = loader.load();
         transfers = loader.getController();

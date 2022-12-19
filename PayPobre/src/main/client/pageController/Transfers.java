@@ -145,7 +145,7 @@ public class Transfers extends GenericSubPage{
         issueRxField.clear();
         switch (type){
             case ("Send Money"):
-                if(!com.sendMoney(home.user.user_id, rxUser.user_id, amount))
+                if(!com.sendMoney(rxUser.user_id, home.user.user_id, amount))
                     logMessage_issue.setText("Something went wrong");
                 else logMessage_issue.setText("Money sent successfully");
                 break;
