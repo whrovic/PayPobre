@@ -28,8 +28,7 @@ public class Personal extends User{
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String date = oldDate.format(dateFormat);
         Transfers_db transfer = new Transfers_db();
-        int trans_id = transfer.executeTransactionSQL(seller_id, buyer_id, amount, date, INSTANTANEOUS);
-        return transfer.updateTransactionSQL(trans_id, INSTANTANEOUS);
+        return transfer.executeTransactionSQL(seller_id, buyer_id, amount, date, INSTANTANEOUS);
     }
 
 }

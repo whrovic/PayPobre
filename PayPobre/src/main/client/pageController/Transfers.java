@@ -151,7 +151,7 @@ public class Transfers extends GenericSubPage{
                 break;
 
             case("Commercial Transaction"):
-                if(com.issueTransaction(home.user.user_id, rxUser.user_id, amount) == -1)
+                if(!com.issueTransaction(home.user.user_id, rxUser.user_id, amount))
                     logMessage_issue.setText("Something went wrong");
                 else logMessage_issue.setText("Transaction issued successfully, wait for buyer confirmation");
                 break;

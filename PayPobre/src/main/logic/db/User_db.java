@@ -129,6 +129,9 @@ public class User_db {
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
             }
+            System.out.println(user.name);
+            if(user.name == null) return null;
+
             stmt.close();
             c.close();
             return user;
@@ -154,7 +157,6 @@ public class User_db {
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
             }
-            System.out.println("user ID: " + user.user_id);
             if(user.user_id == 0) return null;
             stmt.close();
             c.close();

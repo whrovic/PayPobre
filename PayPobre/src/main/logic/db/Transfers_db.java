@@ -49,39 +49,70 @@ public class Transfers_db {
         }
         return output_msg;
     }
-    public int executeTransactionSQL(int seller_id, int buyer_id, Double amount, String date, String state){
+    public boolean executeTransactionSQL(int seller_id, int buyer_id, Double amount, String date, String state){
         var user_db = new User_db();
-        if((user_db.querySQLfromID(seller_id) == null) || (user_db.querySQLfromID(buyer_id) == null)) return -1;
-
+        if((user_db.querySQLfromID(seller_id) == null) || (user_db.querySQLfromID(buyer_id) == null)) return false;
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-
             Random rand = new Random();
             int upperbound = 999999;
             int trans_id = rand.nextInt(upperbound);
-            String sql = "INSERT into \"PayPobre\".transfers (seller_id, buyer_id, amount, trans_id, state, date)"+
-                    "VALUES ('"+ seller_id +"', '"+ buyer_id +"', '"+ amount +"', '"+ trans_id +"', '"+ state + "', '"+ date +"')";
-            while(stmt.executeUpdate(sql) == -1){
-                trans_id = rand.nextInt(upperbound);
-                sql = "INSERT into \"PayPobre\".transfers (seller_id, buyer_id, amount, trans_id, state, date)"+
-                        "VALUES ('"+ seller_id +"', '"+ buyer_id +"', '"+ amount +"', '"+ trans_id +"', '"+ state + "', '"+ date +"')";
+            if(state == PENDING) {
+                String sql = "INSERT into \"PayPobre\".transfers (seller_id, buyer_id, amount, trans_id, state, date)" +
+                        "VALUES ('" + seller_id + "', '" + buyer_id + "', '" + amount + "', '" + trans_id + "', '" + state + "', '" + date + "')";
+                while (stmt.executeUpdate(sql) == -1) {
+                    trans_id = rand.nextInt(upperbound);
+                    sql = "INSERT into \"PayPobre\".transfers (seller_id, buyer_id, amount, trans_id, state, date)" +
+                            "VALUES ('" + seller_id + "', '" + buyer_id + "', '" + amount + "', '" + trans_id + "', '" + state + "', '" + date + "')";
+                }
+                stmt.close();
+                c.close();
+                return true;
+            }
+            else if(state == INSTANTANEOUS){
+                System.out.println("1");
+                Transaction trans = new Transaction();
+                User seller = user_db.querySQLfromID(seller_id);
+                User buyer = user_db.querySQLfromID(buyer_id);
+                System.out.println("money " + buyer.wallet.money);
+                if (buyer.wallet.money < amount) return false;
+
+
+                String sql = "INSERT into \"PayPobre\".transfers (seller_id, buyer_id, amount, trans_id, state, date)" +
+                        "VALUES ('" + seller_id + "', '" + buyer_id + "', '" + amount + "', '" + trans_id + "', '" + state + "', '" + date + "')";
+                user_db.updateSQL(sql);
+                System.out.println("3");
+
+
+                double moneySeller = seller.wallet.money + amount;
+                System.out.println( "money seller  " + moneySeller);
+                System.out.println( "ID seller  " + seller.user_id);
+                String sql_update_money_seller = "UPDATE \"PayPobre\".users SET money = '" + moneySeller + "' WHERE user_id = '" + seller_id + "'";
+                user_db.updateSQL(sql_update_money_seller);
+
+                System.out.println("4");
+                double moneyBuyer = buyer.wallet.money - amount;
+                String sql_update_money_buyer = "UPDATE \"PayPobre\".users SET money = '" + moneyBuyer + "' WHERE user_id = '" + buyer_id + "'";
+                user_db.updateSQL(sql_update_money_buyer);
+                stmt.close();
+                c.close();
+                System.out.println("5");
+                return true;
             }
             stmt.close();
             c.close();
-            return trans_id;
+            return true;
 
         }catch (Exception e) {
             e.printStackTrace();
-            return -1;
+            return false;
         }
     }
     public boolean updateTransactionSQL(int trans_id, String state){
         User_db user_db = new User_db();
         Transfers_db trans_db = new Transfers_db();
         Transaction trans;
-
-        System.out.println("Entrou em update");
 
         try {
             var userDB = new User_db();
@@ -94,12 +125,11 @@ public class Transfers_db {
             System.out.println("money buyer: " + user.wallet.money);
             if (user.wallet.money < trans.amount) return false;
 
-            System.out.println("2 if");
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             trans = trans_db.querySQL(trans_id);
-            if (trans.state.equals(PENDING) || trans.state.equals(INSTANTANEOUS)){
-                if (state.equals(DONE) || state.equals(INSTANTANEOUS)) {
+            if (trans.state.equals(PENDING)){
+                if (state.equals(DONE)) {
                     Commercial seller = new Commercial(user_db.querySQLfromID(trans.seller_id));
                     double moneySeller = seller.wallet.money + trans.amount;
                     String sql_update_money_seller = "UPDATE \"PayPobre\".users SET money = '" + moneySeller + "' WHERE user_id = '" + trans.seller_id + "'";
