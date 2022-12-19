@@ -53,7 +53,7 @@ public class User_db {
         return output_msg;
     }
 
-    public int insertUser(String username, String email, String password, String card, String type, Date date, Double money){
+    public int insertUser(String username, String email, String password, String card, String type, String date, Double money){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();

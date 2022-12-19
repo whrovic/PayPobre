@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import transactions.Transaction;
@@ -23,7 +24,7 @@ public class Transfers extends GenericSubPage{
     private Transaction t;
     private User_db rx_db = new User_db();
     @FXML private Label header;
-    @FXML private TableView table;
+    @FXML private TableView<String> table;
 
     // Issue PopUp
     ObservableList<String> transferTypeList = FXCollections.observableArrayList("Instantaneous", "Commercial Transaction");
@@ -35,11 +36,20 @@ public class Transfers extends GenericSubPage{
     @FXML private Label issueRxLabel;
 
     // Pending
+    ObservableList<Transaction> PendingTransaction = FXCollections.observableArrayList();
     @FXML private HBox pendingTransfersPopup;
+    @FXML private Label logMessage_pending;
+    @FXML private RadioButton acceptTransfer;
+    @FXML private RadioButton cancelTransfer;
+    @FXML private ToggleGroup Respond2Transfer;
+    @FXML private TableView<Transaction> pendingTable;
+    @FXML private TableColumn<Transaction, String> pen_date_col;
+    @FXML private TableColumn<Transaction, String> pen_from_col;
+    @FXML private TableColumn<Transaction, String> pen_Amount_col;
+    @FXML private TableColumn<Transaction, String> pen_id_col;
 
     // Cancel Request
     @FXML private HBox cancelRequestPopup;
-
 
     @FXML private void backHome(ActionEvent actionEvent) throws IOException {
         goToHome(actionEvent);
@@ -164,6 +174,16 @@ public class Transfers extends GenericSubPage{
             issueRxLabel.setText("Receiver:");
         } else if (value.equals("Commercial Transaction")) {
             issueRxLabel.setText("Buyer:");
+        }
+    }
+
+    @FXML private void pendingOk(ActionEvent actionEvent) {
+        if(acceptTransfer.isSelected()){
+            //to do - accept selected transfer in table
+        }
+
+        if(cancelTransfer.isSelected()){
+            //to do - cancel selected transfer in table
         }
     }
 }

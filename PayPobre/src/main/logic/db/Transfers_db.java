@@ -187,18 +187,16 @@ public class Transfers_db {
             return null;
         }
     }
-    public Transaction[] queryStateSQL(String state){
-        //Transaction[] trans = {new Transaction()};
+    public Transaction[] queryStateSQL(String state, int userID){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE state = '" + state + "'";
+            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE state = '" + state + "' AND (buyer_id = '" + userID + "' OR seller_id = '" + userID + "')";
             ResultSet rs = stmt.executeQuery(query);
-            int i = 0;
-            int length = queryLengthStateSQL(state);
+            int length = queryLengthUserStateSQL(state, userID);
             Transaction[] trans = new Transaction[length];
 
-            i = 0;
+            int i = 0;
             while (rs.next()) {
                 trans[i] = new Transaction();
                 trans[i].seller_id = rs.getInt(1);
@@ -219,11 +217,59 @@ public class Transfers_db {
             return null;
         }
     }
-    public int queryLengthStateSQL(String state){
+    public Transaction[] queryAllTransfersSQL(int userID){
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE state = '" + state + "'";
+            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE buyer_id = '" + userID + "' OR seller_id = '" + userID + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            int length = queryLengthUserSQL(userID);
+            Transaction[] trans = new Transaction[length];
+            int i = 0;
+            while (rs.next()) {
+                trans[i] = new Transaction();
+                trans[i].seller_id = rs.getInt(1);
+                trans[i].buyer_id = rs.getInt(2);
+                trans[i].amount = rs.getDouble(3);
+                trans[i].trans_id = rs.getInt(4);
+                trans[i].state = rs.getString(5);
+                trans[i].date = rs.getString(6);
+                i++;
+            }
+            stmt.close();
+            c.close();
+            return trans;
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public int queryLengthUserStateSQL(String state, int userID){
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE state = '" + state + "' AND (buyer_id = '" + userID + "' OR seller_id = '" + userID + "')";
+            ResultSet rs = stmt.executeQuery(query);
+            int i = 0;
+            while (rs.next()) {
+                rs.getInt(1);
+                i++;
+            }
+            stmt.close();
+            c.close();
+            return i;
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+    public int queryLengthUserSQL(int userID){
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            String query = "SELECT *  FROM \"PayPobre\".transfers WHERE buyer_id = '" + userID + "' OR seller_id = '" + userID + "'";
             ResultSet rs = stmt.executeQuery(query);
             int i = 0;
             while (rs.next()) {

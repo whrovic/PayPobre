@@ -46,11 +46,20 @@ class Transfers_dbTest {
     void queryStateSQL() {
         var transDB = new Transfers_db();
         int i = 0;
-        var trans = transDB.queryStateSQL(PENDING);
+        var trans = transDB.queryStateSQL(PENDING, 70);
         while (i < trans.length){
             System.out.println("trans ID = " + trans[i].trans_id + " seller ID = " + trans[i].seller_id);
             i++;
         }
-        //System.out.println("trans ID = " + trans.trans_id + " seller ID = " + trans.seller_id);
+    }
+    @Test
+    void queryAllTransfersSQL() {
+        var transDB = new Transfers_db();
+        int i = 0;
+        var trans = transDB.queryAllTransfersSQL(70);
+        while (i < trans.length){
+            System.out.println("trans ID = " + trans[i].trans_id + " seller ID = " + trans[i].seller_id);
+            i++;
+        }
     }
 }

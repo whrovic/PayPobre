@@ -47,7 +47,9 @@ public class User {
     }
 
     public int Signup(String username, String email, String password, String cardStr, String type){
-        Date date = new Date(System.currentTimeMillis());
+        LocalDateTime oldDate = LocalDateTime.now();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String date = oldDate.format(dateFormat);
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || type == null || cardStr == null) return e_EMPTY_FIELDS;
         if(!Macros.emailValidator(email)) return e_INVALID_EMAIL;
