@@ -45,7 +45,7 @@ public class Login {
             logMessage.setText("This user does not exist");
             return;
         }
-
+        System.out.println("Login ID: " + user.user_id);
         logMessage.setTextFill(Color.RED);
         switch (user.logERROR){
             case e_LOGIN_SUCCESSFUL -> goToHome(actionEvent, user);

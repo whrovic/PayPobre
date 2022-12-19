@@ -50,6 +50,9 @@ public class Transfers_db {
         return output_msg;
     }
     public int executeTransactionSQL(int seller_id, int buyer_id, Double amount, String date, String state){
+        var user_db = new User_db();
+        if((user_db.querySQLfromID(seller_id) == null) || (user_db.querySQLfromID(buyer_id) == null)) return -1;
+
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
@@ -77,18 +80,32 @@ public class Transfers_db {
         User_db user_db = new User_db();
         Transfers_db trans_db = new Transfers_db();
         Transaction trans;
+
+        System.out.println("Entrou em update");
+
         try {
+            var userDB = new User_db();
+            var user = new User();
+            trans = trans_db.querySQL(trans_id);
+            if(trans == null) return false;
+
+            user = userDB.querySQLfromID(trans.buyer_id);
+
+            System.out.println("money buyer: " + user.wallet.money);
+            if (user.wallet.money < trans.amount) return false;
+
+            System.out.println("2 if");
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             trans = trans_db.querySQL(trans_id);
             if (trans.state.equals(PENDING) || trans.state.equals(INSTANTANEOUS)){
                 if (state.equals(DONE) || state.equals(INSTANTANEOUS)) {
-                    Commercial seller = new Commercial(user_db.queryUserSQL(trans.seller_id));
+                    Commercial seller = new Commercial(user_db.querySQLfromID(trans.seller_id));
                     double moneySeller = seller.wallet.money + trans.amount;
                     String sql_update_money_seller = "UPDATE \"PayPobre\".users SET money = '" + moneySeller + "' WHERE user_id = '" + trans.seller_id + "'";
                     user_db.updateSQL(sql_update_money_seller);
 
-                    User buyer = user_db.queryUserSQL(trans.buyer_id);
+                    User buyer = user_db.querySQLfromID(trans.buyer_id);
                     int moneyBuyer = (int) (buyer.wallet.money - trans.amount);
                     String sql_update_money_buyer = "UPDATE \"PayPobre\".users SET money = '" + moneyBuyer + "' WHERE user_id = '" + trans.buyer_id + "'";
                     user_db.updateSQL(sql_update_money_buyer);
@@ -130,6 +147,7 @@ public class Transfers_db {
                 trans.state = rs.getString(5);
                 trans.date = rs.getString(6);
             }
+            if(trans.trans_id == 0) return null;
             stmt.close();
             c.close();
             return trans;

@@ -16,12 +16,14 @@ public class Personal extends User{
         Transfers_db transfer = new Transfers_db();
         return transfer.updateTransactionSQL(trans_id, state);
     }
+
     public boolean cancelTransaction(int trans_id){
         String state = CANCELED;
         Transfers_db transfer = new Transfers_db();
         return transfer.updateTransactionSQL(trans_id, state);
     }
-    public static boolean sendMoney(int seller_id, int buyer_id, Double amount){
+
+    public boolean sendMoney(int seller_id, int buyer_id, Double amount){
         LocalDateTime oldDate = LocalDateTime.now();
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String date = oldDate.format(dateFormat);

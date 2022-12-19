@@ -89,6 +89,7 @@ public class User_db {
             String userPass = null;
 
             while (rs.next()) {
+                user.user_id = rs.getInt(1);
                 user.name = rs.getString(2);
                 userPass = rs.getString(3);
                 user.email = rs.getString(4);
@@ -114,7 +115,7 @@ public class User_db {
         }
     }
 
-    public User queryUserSQL(int ID){
+    public User querySQLfromID(int ID){
         User user = new User();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
@@ -146,12 +147,15 @@ public class User_db {
             String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
+                user.user_id = rs.getInt(1);
                 user.name = rs.getString(2);
                 user.email = rs.getString(4);
                 user.wallet.card = rs.getString(7);
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
             }
+            System.out.println("user ID: " + user.user_id);
+            if(user.user_id == 0) return null;
             stmt.close();
             c.close();
             return user;

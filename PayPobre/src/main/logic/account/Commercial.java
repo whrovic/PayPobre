@@ -12,13 +12,12 @@ public class Commercial extends Personal{
     public Commercial(User user){
         super(user);
     }
-
     public Commercial(User user, String company){
         super(user);
         this.company = company;
     }
 
-    public static int issueTransaction(int seller_id, int buyer_id, Double amount){
+    public int issueTransaction(int seller_id, int buyer_id, Double amount){
         LocalDateTime oldDate = LocalDateTime.now();
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String date = oldDate.format(dateFormat);

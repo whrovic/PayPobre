@@ -7,7 +7,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -156,13 +155,13 @@
                   <DropShadow />
                </effect>
             </HBox>
-            <HBox fx:id="issueTransactionPopup" layoutX="115.0" layoutY="67.0" prefHeight="286.0" prefWidth="420.0" visible="false" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="107.0">
+            <HBox fx:id="issueTransactionPopup" layoutX="115.0" layoutY="67.0" prefHeight="286.0" prefWidth="420.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="107.0">
                <children>
                   <AnchorPane style="-fx-background-color: transparent;">
                      <children>
                         <DialogPane expanded="true" prefHeight="285.0" prefWidth="420.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: grey; -fx-border-radius: 10;" AnchorPane.rightAnchor="0.0">
                            <header>
-                              <ToolBar prefHeight="40.0" prefWidth="447.0" style="-fx-background-radius: 10; -fx-background-color: gainsboro;">
+                              <ToolBar prefHeight="40.0" prefWidth="432.0" style="-fx-background-radius: 10; -fx-background-color: gainsboro;">
                                  <items>
                                     <Label alignment="CENTER" prefHeight="20.0" prefWidth="372.0" text="        Issue Transaction">
                                        <font>
@@ -198,21 +197,16 @@
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="amountField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Amount" GridPane.columnIndex="1">
+                              <TextField fx:id="issueAmountField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Amount" GridPane.columnIndex="1">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </TextField>
-                              <Label text="Buyer:" GridPane.rowIndex="1">
+                              <Label fx:id="issueRxLabel" text="Rx:" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Label>
-                              <PasswordField fx:id="buyerField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Buyer" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </PasswordField>
                               <Label alignment="CENTER" prefHeight="30.0" prefWidth="351.0" text="€" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                                  <font>
                                     <Font name="Arial" size="14.0" />
@@ -221,9 +215,14 @@
                                     <Insets left="260.0" />
                                  </GridPane.margin>
                               </Label>
+                              <TextField fx:id="issueRxField" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="example@email.com" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
                            </children>
                         </GridPane>
-                        <Button layoutX="293.0" layoutY="235.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Ok" AnchorPane.bottomAnchor="20.333333333333314" AnchorPane.rightAnchor="41.0">
+                        <Button layoutX="293.0" layoutY="235.0" mnemonicParsing="false" onAction="#issueOkTrans" prefHeight="30.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Ok" AnchorPane.bottomAnchor="20.333333333333314" AnchorPane.rightAnchor="41.0">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -231,8 +230,8 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label fx:id="logMessageCard" alignment="CENTER" layoutX="28.0" layoutY="230.0" prefHeight="40.0" prefWidth="225.0" text="Log Message" AnchorPane.leftAnchor="41.0" />
-                        <ComboBox layoutX="105.0" layoutY="72.0" prefHeight="30.0" style="-fx-background-radius: 25;" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="72.0" />
+                        <Label fx:id="logMessage_issue" alignment="CENTER" layoutX="28.0" layoutY="230.0" prefHeight="40.0" prefWidth="225.0" text="Log Message" AnchorPane.leftAnchor="41.0" />
+                        <ComboBox fx:id="transferType" layoutX="105.0" layoutY="72.0" onAction="#issueUpdateEmailField" prefHeight="30.0" promptText="Transaction Type" style="-fx-background-radius: 25;" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="72.0" />
                      </children>
                   </AnchorPane>
                </children>
