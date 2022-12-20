@@ -88,7 +88,7 @@ public class Transfers extends GenericSubPage{
         everyAmount.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Amount"));
         everyFrom.setCellValueFactory(new PropertyValueFactory<Transaction, String>("From"));
         everyTo.setCellValueFactory(new PropertyValueFactory<Transaction, String>("To"));
-        everyDate.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Data"));
+        everyDate.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Date"));
         everyState.setCellValueFactory(new PropertyValueFactory<Transaction, String>("State"));
 
         //Pending

@@ -78,4 +78,13 @@ public class User {
     public User(String email){
         User u = user_db.querySQLfromEmail(email);
     }
+
+    public boolean ChangePass(String email, String password, String newPass){
+        if(!user_db.queryChangePass(email, password)) return false;
+        else{
+            String sql = "UPDATE \"PayPobre\".users SET last_login = '" + newPass + "' WHERE email = '" + email + "'";
+            user_db.updateSQL(sql);
+        }
+        return true;
+    }
 }

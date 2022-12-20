@@ -4,16 +4,34 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
-import static util.Const.HEIGHT;
-import static util.Const.WIDTH;
+import static util.Const.*;
 
 public class Profile extends GenericSubPage {
 
+    @FXML private Label logMessagePass;
+    @FXML private PasswordField newPass;
+    @FXML private PasswordField oldPass;
+    @FXML private PasswordField confirmPass;
+    @FXML private Label logMessageCard;
+    @FXML private PasswordField passCardField;
+    @FXML private TextField cardField;
+    @FXML private Label name;
+    @FXML private Label email;
+    @FXML private Label memberDate;
+    @FXML private TextField nameField;
+    @FXML private TextField emailField;
+    @FXML private PasswordField passProfileField;
+    @FXML private Label logMessageProfile;
     @FXML private Label header;
 
     @FXML private void initialize(){
@@ -22,6 +40,10 @@ public class Profile extends GenericSubPage {
         changePassPopup.setVisible(false);
         aboutUsPopup.setVisible(false);
         helpPopup.setVisible(false);
+
+        logMessageCard.setText("");
+        logMessagePass.setText("");
+        logMessageProfile.setText("");
     }
 
     @FXML private void backHome(ActionEvent actionEvent) throws IOException {
@@ -30,6 +52,9 @@ public class Profile extends GenericSubPage {
 
     public void setPage() {
         header.setText(home.user.name);
+        name.setText(home.user.name);
+        email.setText(home.user.email);
+        memberDate.setText(home.user.created_on);
     }
 
     @FXML private Button upProfile;
@@ -89,13 +114,22 @@ public class Profile extends GenericSubPage {
 
     @FXML private void changePassOnAction(ActionEvent actionEvent) {
         changePassPopup.setVisible(true);
+        logMessagePass.setText("");
+        newPass.clear();
+        oldPass.clear();
+        confirmPass.clear();
     }
 
     @FXML private void applyChangePass(ActionEvent actionEvent) {
+
     }
 
     @FXML private void closeChangePass(ActionEvent actionEvent) {
         changePassPopup.setVisible(false);
+        logMessagePass.setText("");
+        newPass.clear();
+        oldPass.clear();
+        confirmPass.clear();
     }
 
     @FXML private void aboutUsOnAction(ActionEvent actionEvent) {

@@ -93,6 +93,7 @@ public class User_db {
                 user.name = rs.getString(2);
                 userPass = rs.getString(3);
                 user.email = rs.getString(4);
+                user.created_on = rs.getString(5);
                 user.wallet.card = rs.getString(7);
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
@@ -196,6 +197,36 @@ public class User_db {
             stmt.close();
             c.close();
             return true;
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean queryChangePass(String email, String password){
+        User user = new User();
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            String userPass = null;
+
+            while (rs.next()) {
+                userPass = rs.getString(3);
+            }
+
+            assert userPass != null;
+            if (userPass.compareTo(password) == 0){
+                user.logERROR = e_LOGIN_SUCCESSFUL;
+                return true;
+            }
+
+            user.logERROR = e_WRONG_CREDENTIALS;
+            stmt.close();
+            c.close();
+            return false;
 
         }catch (Exception e) {
             e.printStackTrace();
