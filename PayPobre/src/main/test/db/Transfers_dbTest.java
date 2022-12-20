@@ -52,6 +52,7 @@ class Transfers_dbTest {
             i++;
         }
     }
+
     @Test
     void queryAllTransfersSQL() {
         var transDB = new Transfers_db();

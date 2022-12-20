@@ -15,19 +15,37 @@ import util.Macros;
 import static util.Const.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringJoiner;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import db.*;
 
 public class Transfers extends GenericSubPage{
     // General
     private Transaction t;
     private User_db rx_db = new User_db();
+    private Transfers_db t_db = new Transfers_db();
+    private Connection c;
+    private Statement stmt;
+    private String pendingTransfersQuery = null;
+    private String allTransfersQuery = null;
     @FXML private Label header;
-    @FXML private TableView<String> table;
+
+    // Every Transaction table
+    ObservableList<Transaction> EveryTransaction = FXCollections.observableArrayList();
+    @FXML private TableView<Transaction> mainTable;
+    @FXML private TableColumn<Transaction, String> everyId;
+    @FXML private TableColumn<Transaction, String> everyAmount;
+    @FXML private TableColumn<Transaction, String> everyFrom;
+    @FXML private TableColumn<Transaction, String> everyTo;
+    @FXML private TableColumn<Transaction, String> everyDate;
+    @FXML private TableColumn<Transaction, String> everyState;
+
 
     // Issue PopUp
-    ObservableList<String> transferTypeList = FXCollections.observableArrayList("Instantaneous", "Commercial Transaction");
+    ObservableList<String> transferTypeList  = FXCollections.observableArrayList("Instantaneous", "Commercial Transaction");
     @FXML private HBox issueTransactionPopup;
     @FXML private TextField issueAmountField;
     @FXML private TextField issueRxField;
@@ -36,40 +54,49 @@ public class Transfers extends GenericSubPage{
     @FXML private Label issueRxLabel;
 
     // Pending
-    ObservableList<Transaction> PendingTransaction = FXCollections.observableArrayList();
+    ObservableList<Transaction> PendingTransactions = FXCollections.observableArrayList();
     @FXML private HBox pendingTransfersPopup;
     @FXML private Label logMessage_pending;
     @FXML private RadioButton acceptTransfer;
     @FXML private RadioButton cancelTransfer;
     @FXML private ToggleGroup Respond2Transfer;
     @FXML private TableView<Transaction> pendingTable;
-    @FXML private TableColumn<Transaction, String> pen_date_col;
-    @FXML private TableColumn<Transaction, String> pen_from_col;
-    @FXML private TableColumn<Transaction, String> pen_Amount_col;
-    @FXML private TableColumn<Transaction, String> pen_id_col;
+    @FXML private TableColumn<Transaction, String> penDate;
+    @FXML private TableColumn<Transaction, String> penFrom;
+    @FXML private TableColumn<Transaction, String> penTo;
+    @FXML private TableColumn<Transaction, String> penAmount;
+    @FXML private TableColumn<Transaction, String> penId;
 
-    // Cancel Request
-    @FXML private HBox cancelRequestPopup;
 
     @FXML private void backHome(ActionEvent actionEvent) throws IOException {
         goToHome(actionEvent);
     }
 
-    @FXML private void initialize(){
-        TableColumn id = new TableColumn("ID");
-        TableColumn amount = new TableColumn("Amount");
-        TableColumn receiver = new TableColumn("Receiver");
-        TableColumn sender = new TableColumn("Sender");
-        TableColumn date = new TableColumn("Date");
-        TableColumn state = new TableColumn("State");
-        table.getColumns().addAll(id, amount, receiver, sender, date, state);
+    @FXML private void initialize() throws SQLException {
         pendingTransfersPopup.setVisible(false);
         issueTransactionPopup.setVisible(false);
-        cancelRequestPopup.setVisible(false);
+        c = t_db.connect();
+        stmt = c.createStatement();
 
         logMessage_issue.setText("");
+        logMessage_pending.setText("");
         issueAmountField.addEventFilter(KeyEvent.KEY_TYPED, Macros.numeric_Validation(10));
         issueRxLabel.setText("Rx");
+
+        //Main Table
+        everyId.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Id"));
+        everyAmount.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Amount"));
+        everyFrom.setCellValueFactory(new PropertyValueFactory<Transaction, String>("From"));
+        everyTo.setCellValueFactory(new PropertyValueFactory<Transaction, String>("To"));
+        everyDate.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Data"));
+        everyState.setCellValueFactory(new PropertyValueFactory<Transaction, String>("State"));
+
+        //Pending
+        penId.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Id"));
+        penAmount.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Amount"));
+        penTo.setCellValueFactory(new PropertyValueFactory<Transaction, String>("To"));
+        penFrom.setCellValueFactory(new PropertyValueFactory<Transaction, String>("From"));
+        penDate.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Date"));
     }
 
     public void setPage(){
@@ -81,10 +108,15 @@ public class Transfers extends GenericSubPage{
         else if(home.user.type.equals(PERSONAL))
             transferType.setItems(FXCollections.observableArrayList("Send Money"));
 
+        pendingTransfersQuery = "SELECT *  FROM \"PayPobre\".transfers WHERE state = '" + PENDING + "' AND buyer_id = '" + home.user.user_id + "'";
+        allTransfersQuery = "SELECT *  FROM \"PayPobre\".transfers WHERE buyer_id = '" + home.user.user_id + "' OR seller_id = '" + home.user.user_id + "'";
+        refreshMainTable();
     }
 
     // Open PopUps
     @FXML private void pendingTransfersOnAction(ActionEvent actionEvent) {
+        refreshPending();
+
         pendingTransfersPopup.setVisible(true);
     }
 
@@ -93,10 +125,6 @@ public class Transfers extends GenericSubPage{
         issueRxField.clear();
         issueAmountField.clear();
         issueTransactionPopup.setVisible(true);
-    }
-
-    @FXML private void cancelRequestOnAction(ActionEvent actionEvent) {
-        cancelRequestPopup.setVisible(true);
     }
 
     // close commands
@@ -110,10 +138,6 @@ public class Transfers extends GenericSubPage{
         issueRxField.clear();
         issueAmountField.clear();
         issueTransactionPopup.setVisible(false);
-    }
-
-    @FXML private void closeCancelRequest(ActionEvent actionEvent) {
-        cancelRequestPopup.setVisible(false);
     }
 
     // ok commands
@@ -166,6 +190,8 @@ public class Transfers extends GenericSubPage{
                 else logMessage_issue.setText("Transaction issued successfully, wait for buyer confirmation");
                 break;
         }
+        refreshMainTable();
+        refreshPending();
     }
 
     @FXML private void issueUpdateEmailField(ActionEvent actionEvent) {
@@ -178,12 +204,70 @@ public class Transfers extends GenericSubPage{
     }
 
     @FXML private void pendingOk(ActionEvent actionEvent) {
+        logMessage_pending.setText("");
+        Transaction t = pendingTable.getSelectionModel().getSelectedItem();
+
         if(acceptTransfer.isSelected()){
             //to do - accept selected transfer in table
+            if(t_db.updateTransactionSQL(Integer.parseInt(t.getId()), DONE)){
+                logMessage_pending.setText("Transaction Accepted");
+                refreshPending();
+                refreshMainTable();
+            }
+            else logMessage_pending.setText("Check if you have enough money in\n your PayPobre account");
         }
 
         if(cancelTransfer.isSelected()){
             //to do - cancel selected transfer in table
+            if(t_db.updateTransactionSQL(Integer.parseInt(t.getId()), CANCELED)){
+                logMessage_pending.setText("Transaction Canceled");
+                refreshPending();
+                refreshMainTable();
+            }
+            else logMessage_pending.setText("Something went");
+        }
+    }
+
+    private void refreshPending(){
+        try {
+            PendingTransactions.clear();
+
+            ResultSet rs = stmt.executeQuery(pendingTransfersQuery);
+            while (rs.next()) {
+                PendingTransactions.add(new Transaction(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getDouble(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+                pendingTable.setItems(PendingTransactions);
+        }catch (Exception e) {
+            //e.printStackTrace();
+            logMessage_pending.setText("Couldn't find any");
+        }
+    }
+
+    private void refreshMainTable(){
+        try {
+            EveryTransaction.clear();
+
+            ResultSet rs = stmt.executeQuery(allTransfersQuery);
+            while (rs.next()) {
+                EveryTransaction.add(new Transaction(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getDouble(3),
+                        rs.getInt(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+            mainTable.setItems(EveryTransaction);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            //logMessage_pending.setText("Couldn't find any");
         }
     }
 }

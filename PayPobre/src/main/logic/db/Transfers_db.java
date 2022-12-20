@@ -9,12 +9,13 @@ import java.util.Random;
 import static util.Const.*;
 
 public class Transfers_db {
-    Connection c;
-    String db_UserName = "pswt0203";
-    String db_PassWord = "plataoplomo";
-    String db_URL = "jdbc:postgresql://db.fe.up.pt:5432/";
-    String output_msg = null;
-    public String connect() {
+    private Connection c;
+    private String db_UserName = "pswt0203";
+    private String db_PassWord = "plataoplomo";
+    private String db_URL = "jdbc:postgresql://db.fe.up.pt:5432/";
+    private String output_msg = null;
+
+    public Connection connect() {
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
@@ -22,10 +23,11 @@ public class Transfers_db {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
-            return e.getMessage();
+            return null;
         }
-        return "Opened database successfully";
+        return c;
     }
+
     public String CreateTable(){
         try {
             //Class.forName("org.postgresql.Driver");
@@ -123,29 +125,27 @@ public class Transfers_db {
             user = userDB.querySQLfromID(trans.buyer_id);
 
             System.out.println("money buyer: " + user.wallet.money);
-            if (user.wallet.money < trans.amount) return false;
 
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
             trans = trans_db.querySQL(trans_id);
-            if (trans.state.equals(PENDING)){
+            if (trans.stateOld.equals(PENDING)){
                 if (state.equals(DONE)) {
+                    if (user.wallet.money < trans.amountOld) return false;
                     Commercial seller = new Commercial(user_db.querySQLfromID(trans.seller_id));
-                    double moneySeller = seller.wallet.money + trans.amount;
+                    double moneySeller = seller.wallet.money + trans.amountOld;
                     String sql_update_money_seller = "UPDATE \"PayPobre\".users SET money = '" + moneySeller + "' WHERE user_id = '" + trans.seller_id + "'";
                     user_db.updateSQL(sql_update_money_seller);
 
                     User buyer = user_db.querySQLfromID(trans.buyer_id);
-                    int moneyBuyer = (int) (buyer.wallet.money - trans.amount);
+                    int moneyBuyer = (int) (buyer.wallet.money - trans.amountOld);
                     String sql_update_money_buyer = "UPDATE \"PayPobre\".users SET money = '" + moneyBuyer + "' WHERE user_id = '" + trans.buyer_id + "'";
                     user_db.updateSQL(sql_update_money_buyer);
 
-                    if (state.equals(DONE)) {
-                        String sql_update_transaction = "UPDATE \"PayPobre\".transfers SET state = '" + state + "' WHERE trans_id = '" + trans_id + "'";
-                        trans_db.updateSQL(sql_update_transaction);
-                    }
+                    String sql_update_transaction = "UPDATE \"PayPobre\".transfers SET state = '" + state + "' WHERE trans_id = '" + trans_id + "'";
+                    trans_db.updateSQL(sql_update_transaction);
                 } else {
-                    String sql_update_transaction = "UPDATE \"PayPobre\".transfers SET state = '" + CANCELED + "' WHERE trans_id = '" + trans.buyer_id + "'";
+                    String sql_update_transaction = "UPDATE \"PayPobre\".transfers SET state = '" + CANCELED + "' WHERE trans_id = '" + trans_id + "'";
                     trans_db.updateSQL(sql_update_transaction);
                 }
                 stmt.close();
@@ -172,10 +172,10 @@ public class Transfers_db {
             while (rs.next()) {
                 trans.seller_id = rs.getInt(1);
                 trans.buyer_id = rs.getInt(2);
-                trans.amount = rs.getDouble(3);
+                trans.amountOld = rs.getDouble(3);
                 trans.trans_id = rs.getInt(4);
-                trans.state = rs.getString(5);
-                trans.date = rs.getString(6);
+                trans.stateOld = rs.getString(5);
+                trans.dateOld = rs.getString(6);
             }
             if(trans.trans_id == 0) return null;
             stmt.close();
@@ -201,12 +201,11 @@ public class Transfers_db {
                 trans[i] = new Transaction();
                 trans[i].seller_id = rs.getInt(1);
                 trans[i].buyer_id = rs.getInt(2);
-                trans[i].amount = rs.getDouble(3);
+                trans[i].amountOld = rs.getDouble(3);
                 trans[i].trans_id = rs.getInt(4);
-                trans[i].state = rs.getString(5);
-                trans[i].date = rs.getString(6);
+                trans[i].stateOld = rs.getString(5);
+                trans[i].dateOld = rs.getString(6);
                 i++;
-
             }
             stmt.close();
             c.close();
@@ -230,10 +229,10 @@ public class Transfers_db {
                 trans[i] = new Transaction();
                 trans[i].seller_id = rs.getInt(1);
                 trans[i].buyer_id = rs.getInt(2);
-                trans[i].amount = rs.getDouble(3);
+                trans[i].amountOld = rs.getDouble(3);
                 trans[i].trans_id = rs.getInt(4);
-                trans[i].state = rs.getString(5);
-                trans[i].date = rs.getString(6);
+                trans[i].stateOld = rs.getString(5);
+                trans[i].dateOld = rs.getString(6);
                 i++;
             }
             stmt.close();

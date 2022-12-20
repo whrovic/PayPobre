@@ -129,7 +129,7 @@ public class User_db {
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
             }
-            System.out.println(user.name);
+
             if(user.name == null) return null;
 
             stmt.close();
@@ -138,6 +138,27 @@ public class User_db {
 
         }catch (Exception e) {
             //e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String queryNameFromID(int id){
+        String name = null;
+        try {
+            c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
+            Statement stmt = c.createStatement();
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE user_id = '" + id + "'";
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next())
+                name = rs.getString(2);
+
+            stmt.close();
+            c.close();
+            return name;
+
+        }catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
