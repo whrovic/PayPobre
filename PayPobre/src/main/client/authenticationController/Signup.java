@@ -62,8 +62,9 @@ public class Signup {
             case e_INVALID_EMAIL -> logMessage.setText("Please, insert a valid email:\n \texample@test.com");
             case e_USER_ALREADY_EXISTS -> logMessage.setText("User Already Exists");
             case e_EMPTY_FIELDS -> logMessage.setText("You must fulfill everything");
-            case e_SIGNUP_SUCCESSFUL -> login(actionEvent, user);
+            case e_SIGNUP_SUCCESSFUL -> logMessage.setText("Great! Your are now member of PayPobre\n Please log in");
         }
+        if(log == e_SIGNUP_SUCCESSFUL) logMessage.setTextFill(Color.GREEN);
     }
 
     @FXML private void backToLogin(ActionEvent actionEvent) throws IOException {
@@ -71,18 +72,6 @@ public class Signup {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
         stage.setScene(scene);
-        stage.show();
-    }
-
-    private void login(ActionEvent actionEvent, User user) throws IOException{
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/pages/home.fxml"));
-        root = loader.load();
-        Home homeControl = loader.getController();
-        homeControl.setPage(user);
-
-        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root, WIDTH, HEIGHT));
         stage.show();
     }
 }

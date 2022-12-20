@@ -54,7 +54,7 @@ public class Profile extends GenericSubPage {
         header.setText(home.user.name);
         name.setText(home.user.name);
         email.setText(home.user.email);
-        memberDate.setText(home.user.created_on);
+        memberDate.setText("Member since: " + home.user.created_on);
     }
 
     @FXML private Button upProfile;
