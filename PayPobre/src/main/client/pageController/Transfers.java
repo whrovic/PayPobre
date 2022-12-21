@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import transactions.Transaction;
 import util.Macros;
 import static util.Const.*;
@@ -81,7 +82,7 @@ public class Transfers extends GenericSubPage{
         logMessage_issue.setText("");
         logMessage_pending.setText("");
         issueAmountField.addEventFilter(KeyEvent.KEY_TYPED, Macros.numeric_Validation(10));
-        issueRxLabel.setText("Rx");
+        issueRxLabel.setText("Email:");
 
         //Main Table
         everyId.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Id"));
@@ -94,8 +95,8 @@ public class Transfers extends GenericSubPage{
         //Pending
         penId.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Id"));
         penAmount.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Amount"));
-        penTo.setCellValueFactory(new PropertyValueFactory<Transaction, String>("To"));
         penFrom.setCellValueFactory(new PropertyValueFactory<Transaction, String>("From"));
+        penTo.setCellValueFactory(new PropertyValueFactory<Transaction, String>("To"));
         penDate.setCellValueFactory(new PropertyValueFactory<Transaction, String>("Date"));
     }
 
@@ -148,30 +149,35 @@ public class Transfers extends GenericSubPage{
         User rxUser;
 
         if(issueRxField.getText().isEmpty() || (transferType.getValue() == null) || issueAmountField.getText().isEmpty()){
-            logMessage_issue.setText("Please fulfil every field");
+            logMessage_issue.setText("Please fulfill every field");
+            logMessage_issue.setTextFill(Color.RED);
             return;
         }
 
         double amount = 0.0;
         if(type.isEmpty()) {
-            logMessage_issue.setText("Please, tell us what type of\n transfer you want to do?");
+            logMessage_issue.setText("Please select transaction type");
+            logMessage_issue.setTextFill(Color.RED);
             return;
         }
 
         if(!Macros.emailValidator(email)){
-            logMessage_issue.setText("Please, insert a valid email:\n \texample@test.com");
+            logMessage_issue.setText("Please insert a valid email:\n      example@test.com");
+            logMessage_issue.setTextFill(Color.RED);
             return;
         }
 
         rxUser = rx_db.querySQLfromEmail(email);
         if( rxUser == null){
             logMessage_issue.setText("This user does not exist");
+            logMessage_issue.setTextFill(Color.RED);
             return;
         }
 
         amount = Double.parseDouble(issueAmountField.getText());
         if(amount == 0){
             logMessage_issue.setText("Specify amount");
+            logMessage_issue.setTextFill(Color.RED);
             return;
         }
         System.out.println("rx ID: " + rxUser.user_id + " tx ID: " + home.user.user_id);
@@ -179,15 +185,25 @@ public class Transfers extends GenericSubPage{
         issueRxField.clear();
         switch (type){
             case ("Send Money"):
-                if(!com.sendMoney(rxUser.user_id, home.user.user_id, amount))
+                if(!com.sendMoney(rxUser.user_id, home.user.user_id, amount)) {
                     logMessage_issue.setText("Something went wrong");
-                else logMessage_issue.setText("Money sent successfully");
+                    logMessage_issue.setTextFill(Color.RED);
+                }
+                else {
+                    logMessage_issue.setText("Money sent successfully");
+                    logMessage_issue.setTextFill(Color.GREEN);
+                }
                 break;
 
             case("Commercial Transaction"):
-                if(!com.issueTransaction(home.user.user_id, rxUser.user_id, amount))
+                if(!com.issueTransaction(home.user.user_id, rxUser.user_id, amount)) {
                     logMessage_issue.setText("Something went wrong");
-                else logMessage_issue.setText("Transaction issued successfully, wait for buyer confirmation");
+                    logMessage_issue.setTextFill(Color.RED);
+                }
+                else {
+                    logMessage_issue.setText("Transaction issued successfully\n  Wait for buyer confirmation");
+                    logMessage_issue.setTextFill(Color.GREEN);
+                }
                 break;
         }
         refreshMainTable();
@@ -210,21 +226,29 @@ public class Transfers extends GenericSubPage{
         if(acceptTransfer.isSelected()){
             //to do - accept selected transfer in table
             if(t_db.updateTransactionSQL(Integer.parseInt(t.getId()), DONE)){
-                logMessage_pending.setText("Transaction Accepted");
+                logMessage_pending.setText("Transaction accepted");
+                logMessage_pending.setTextFill(Color.GREEN);
                 refreshPending();
                 refreshMainTable();
             }
-            else logMessage_pending.setText("Check if you have enough money in\n your PayPobre account");
+            else {
+                logMessage_pending.setText("Not enough money\n in your PayPobre account");
+                logMessage_pending.setTextFill(Color.RED);
+            }
         }
 
         if(cancelTransfer.isSelected()){
             //to do - cancel selected transfer in table
             if(t_db.updateTransactionSQL(Integer.parseInt(t.getId()), CANCELED)){
-                logMessage_pending.setText("Transaction Canceled");
+                logMessage_pending.setText("Transaction canceled");
+                logMessage_pending.setTextFill(Color.GREEN);
                 refreshPending();
                 refreshMainTable();
             }
-            else logMessage_pending.setText("Something went");
+            else {
+                logMessage_pending.setText("Something went wrong");
+                logMessage_pending.setTextFill(Color.RED);
+            }
         }
     }
 
@@ -246,6 +270,7 @@ public class Transfers extends GenericSubPage{
         }catch (Exception e) {
             //e.printStackTrace();
             logMessage_pending.setText("Couldn't find any");
+            logMessage_pending.setTextFill(Color.RED);
         }
     }
 

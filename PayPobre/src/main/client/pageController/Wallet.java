@@ -64,7 +64,7 @@ public class Wallet extends GenericSubPage {
     @FXML private void deposit(ActionEvent actionEvent) {
         if (depositAmount.getText().isEmpty()) {
             logMessage.setText("This field is empty, please insert an amount");
-            logMessage.setTextFill(Color.BLACK);
+            logMessage.setTextFill(Color.RED);
         }
 
         double amount = 0.0;
@@ -93,7 +93,7 @@ public class Wallet extends GenericSubPage {
     @FXML private void withdraw(ActionEvent actionEvent) {
         if (withdrawAmount.getText().isEmpty()) {
             logMessage.setText("This field is empty, please insert an amount");
-            logMessage.setTextFill(Color.BLACK);
+            logMessage.setTextFill(Color.RED);
             return;
         }
 
@@ -123,5 +123,6 @@ public class Wallet extends GenericSubPage {
 
     @FXML private void goToProfile(ActionEvent actionEvent) {
         logMessage.setText("This feature isn´t implemented yet");
+        logMessage.setTextFill(Color.RED);
     }
 }

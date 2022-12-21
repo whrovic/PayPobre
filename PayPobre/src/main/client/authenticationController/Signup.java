@@ -58,11 +58,11 @@ public class Signup {
 
         logMessage.setTextFill(Color.RED);
         switch (log){
-            case e_INVALID_CREDIT_CARD -> logMessage.setText("Invalid Credit Card");
-            case e_INVALID_EMAIL -> logMessage.setText("Please, insert a valid email:\n \texample@test.com");
-            case e_USER_ALREADY_EXISTS -> logMessage.setText("User Already Exists");
+            case e_INVALID_CREDIT_CARD -> logMessage.setText("Invalid credit card");
+            case e_INVALID_EMAIL -> logMessage.setText("Please insert a valid email: example@test.com");
+            case e_USER_ALREADY_EXISTS -> logMessage.setText("User already exists");
             case e_EMPTY_FIELDS -> logMessage.setText("You must fulfill everything");
-            case e_SIGNUP_SUCCESSFUL -> logMessage.setText("Great! Your are now member of PayPobre\n Please log in");
+            case e_SIGNUP_SUCCESSFUL -> logMessage.setText("Your are now member of PayPobre! Please login");
         }
         if(log == e_SIGNUP_SUCCESSFUL) logMessage.setTextFill(Color.GREEN);
     }

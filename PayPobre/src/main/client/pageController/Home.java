@@ -7,7 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import util.Const;
 
@@ -87,5 +89,15 @@ public class Home extends GenericPage {
         scene = new Scene(root, Const.WIDTH, Const.HEIGHT);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML private Button profileButton;
+
+    @FXML private void goToProfileOnMouseEntered(MouseEvent actionEvent) {
+        profileButton.setStyle("-fx-background-radius: 90");
+    }
+
+    @FXML private void goToProfileOnMouseExited(MouseEvent actionEvent) {
+        profileButton.setStyle("-fx-background-radius: 90");
     }
 }

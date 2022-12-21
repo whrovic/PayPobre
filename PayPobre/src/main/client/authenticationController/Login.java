@@ -48,7 +48,7 @@ public class Login {
         logMessage.setTextFill(Color.RED);
         switch (user.logERROR){
             case e_LOGIN_SUCCESSFUL -> goToHome(actionEvent, user);
-            case e_WRONG_CREDENTIALS -> logMessage.setText("Invalid Credentials");
+            case e_WRONG_CREDENTIALS -> logMessage.setText("Invalid credentials");
         }
     }
 

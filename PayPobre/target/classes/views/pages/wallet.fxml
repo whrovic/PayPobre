@@ -80,12 +80,12 @@
                         <Image url="@../../images/card/master.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="cardNumber" layoutX="95.0" layoutY="130.0" text="**** **** **** **** 1234" textFill="WHITE" AnchorPane.bottomAnchor="17.333333333333343">
+                  <Label fx:id="cardNumber" layoutX="120.0" layoutY="130.0" prefHeight="20.0" prefWidth="125.0" text="**** **** **** 1234" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="cardBalance" layoutX="15.0" layoutY="87.0" text="Balance: €€" textFill="WHITE">
+                  <Label fx:id="cardBalance" layoutX="15.0" layoutY="87.0" text="Balance: 1000.00 €" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
