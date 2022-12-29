@@ -79,12 +79,45 @@ public class User {
         User u = user_db.querySQLfromEmail(email);
     }
 
-    public boolean ChangePass(String email, String password, String newPass){
-        if(!user_db.queryChangePass(email, password)) return false;
+    public boolean changePass(String password, String newPass){
+        if(!user_db.queryUpdateProfile(user_id, password)) return false;
         else{
-            String sql = "UPDATE \"PayPobre\".users SET last_login = '" + newPass + "' WHERE email = '" + email + "'";
+            String sql = "UPDATE \"PayPobre\".users SET password = '" + newPass + "' WHERE email = '" + email + "'";
             user_db.updateSQL(sql);
         }
         return true;
+    }
+
+    public int changeCard(String password, String card){
+        if(!user_db.queryUpdateProfile(user_id, password)) return e_WRONG_CREDENTIALS;
+        if(!CreditCardValidation.validation(card)) return e_INVALID_CREDIT_CARD;
+
+        String sql = "UPDATE \"PayPobre\".users SET card = '" + card + "' WHERE email = '" + email + "'";
+        user_db.updateSQL(sql);
+
+        return e_SUCCESS;
+    }
+
+    public int changeName(String password, String username){
+        if(username.isEmpty()) return e_SKIP_CHANGE_NAME;
+
+        if(!user_db.queryUpdateProfile(user_id, password)) return e_WRONG_CREDENTIALS;
+        else{
+            String sql = "UPDATE \"PayPobre\".users SET username = '" + username + "' WHERE user_id = '" + user_id + "'";
+            user_db.updateSQL(sql);
+        }
+        return e_SUCCESS;
+    }
+
+    public int changeEmail(String password, String newEmail){
+        if(newEmail.isEmpty()) return e_SKIP_CHANGE_EMAIl;
+
+        if(!user_db.queryUpdateProfile(user_id, password)) return e_WRONG_CREDENTIALS;
+        if(!Macros.emailValidator(newEmail)) return e_INVALID_EMAIL;
+        else{
+            String sql = "UPDATE \"PayPobre\".users SET email = '" + newEmail + "' WHERE user_id = '" + user_id + "'";
+            user_db.updateSQL(sql);
+        }
+        return e_SUCCESS;
     }
 }

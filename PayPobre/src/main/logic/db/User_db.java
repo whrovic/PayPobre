@@ -101,7 +101,7 @@ public class User_db {
 
             assert userPass != null;
             if (userPass.compareTo(password) == 0){
-                user.logERROR = e_LOGIN_SUCCESSFUL;
+                user.logERROR = e_SUCCESS;
                 return user;
             }
 
@@ -126,6 +126,7 @@ public class User_db {
             while (rs.next()) {
                 user.name = rs.getString(2);
                 user.email = rs.getString(4);
+                user.created_on = rs.getString(5);
                 user.wallet.card = rs.getString(7);
                 user.type = rs.getString(8);
                 user.wallet.money = rs.getDouble(9);
@@ -204,12 +205,12 @@ public class User_db {
         }
     }
 
-    public boolean queryChangePass(String email, String password){
+    public boolean queryUpdateProfile(int user_id, String password){
         User user = new User();
         try {
             c = DriverManager.getConnection(db_URL, db_UserName, db_PassWord);
             Statement stmt = c.createStatement();
-            String query = "SELECT *  FROM \"PayPobre\".users WHERE email = '" + email + "'";
+            String query = "SELECT *  FROM \"PayPobre\".users WHERE user_id = '" + user_id + "'";
             ResultSet rs = stmt.executeQuery(query);
             String userPass = null;
 
@@ -219,7 +220,7 @@ public class User_db {
 
             assert userPass != null;
             if (userPass.compareTo(password) == 0){
-                user.logERROR = e_LOGIN_SUCCESSFUL;
+                user.logERROR = e_SUCCESS;
                 return true;
             }
 

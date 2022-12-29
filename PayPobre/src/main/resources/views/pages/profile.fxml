@@ -209,7 +209,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <HBox fx:id="upProfilePopup" layoutX="115.0" layoutY="117.0" visible="false" AnchorPane.rightAnchor="115.0">
+            <HBox fx:id="upProfilePopup" layoutX="115.0" layoutY="117.0" AnchorPane.rightAnchor="115.0">
                <children>
                   <AnchorPane style="-fx-background-color: transparent;">
                      <children>
@@ -290,7 +290,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label fx:id="logMessageProfile" alignment="CENTER" layoutX="40.0" layoutY="211.0" prefHeight="40.0" prefWidth="175.0" text="Log Message" />
+                        <Label fx:id="logMessageProfile" alignment="CENTER" layoutX="40.0" layoutY="211.0" prefHeight="40.0" prefWidth="175.0" text="Log Message" textAlignment="CENTER" />
                      </children>
                   </AnchorPane>
                </children>
